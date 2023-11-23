@@ -1,6 +1,6 @@
 const CardPortofolio = ({ img, title, text }) => {
   return (
-    <div className="transparan rounded-3 mb-3 mt-3">
+    <div className="transparan rounded-3 mb-3 mt-3" >
       <div className="col-12 rounded-3" 
     //   style={{height:'10em', aspectRatio: '1 / 1' }}
       >

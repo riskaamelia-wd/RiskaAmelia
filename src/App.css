@@ -1,6 +1,7 @@
 #root {
   font-family: 'Poppins', sans-serif;
-  --warning : #F8E7A1
+  --warning : #F8E7A1;
+  --secondary : #868490;
 }
 
 body, * {
@@ -8,9 +9,10 @@ body, * {
 }
 
 .transparan{
-  background-color: rgba(255,255,255,0.13);
+  background-color: rgba(9, 20, 39, 0.80);
   border-radius: 6px;
-  backdrop-filter: blur(18px);
+  border: 1px rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(9px);
 
 }
 
