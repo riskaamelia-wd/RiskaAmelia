@@ -11,6 +11,7 @@ import Jumbotorn from './components/Jumbotron'
 import vektor1 from './assets/Vector 1.svg'
 import CardService from './elements/CardService'
 import test from './assets/lia.jpeg'
+import CardPortofolio from './elements/CardPortofolio'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -25,6 +26,11 @@ function App() {
           <Navbar/>
           <Jumbotorn/>
           <CardService
+            img={test}
+            title={'Website'}
+            text={'50+ Project'}
+          />          
+          <CardPortofolio
             img={test}
             title={'Website'}
             text={'50+ Project'}

@@ -3,7 +3,7 @@
   --warning : #F8E7A1
 }
 
-body {
+body, * {
   font-family: 'Poppins', sans-serif;
 }
 
