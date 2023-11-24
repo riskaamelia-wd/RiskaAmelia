@@ -6,6 +6,7 @@ import CardService from '../elements/CardService'
 import CardPortofolio from '../elements/CardPortofolio'
 import Service from '../components/Service'
 import Portfolio from '../components/Portfolio'
+import Contact from '../components/Contact'
 
 const Home = () => {
     
@@ -23,6 +24,7 @@ const Home = () => {
             <Jumbotorn/>      
             <Service/>
             <Portfolio/>  
+            <Contact/>
           </div>
         </div>
       </div>

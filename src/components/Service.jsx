@@ -8,7 +8,7 @@ const Service = () => {
     return(
         <div  className="d-flex flex-fill justify-content-between mt-5">
             <div className="col-lg-3 col-md-4 col-5">
-                <p className="fw-semibold fs-2 fs-md-1">My Awesome Service</p>
+                <p className="fw-semibold fs-2 fs-md-1 text-nowrap">My Awesome Service</p>
                 <p className="fw-light" style={{color:'var(--secondary)', fontSize: fontSize}}>Eget malesuada tortor ut sed. Tincidunt viverra malesuada nisl vehicula vestibulum. Ut blandit fermentum, cursus nulla. Imperdiet neque mi convallis quis interdum sagittis.</p>
             </div>
             <div className="col-md-6 col-6 justify-content-end flex-column d-flex">
@@ -21,11 +21,13 @@ const Service = () => {
                 img={test}
                 title={'Website'}
                 text={'50+ Project'}
+                className={"bi bi-arrow-right"}
                 /> 
                 <CardService
                 img={test}
                 title={'Website'}
                 text={'50+ Project'}
+                className={"bi bi-arrow-right"}
                 />  
             </div>
         </div>
