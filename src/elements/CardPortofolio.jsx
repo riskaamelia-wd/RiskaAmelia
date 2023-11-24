@@ -1,7 +1,14 @@
+import { useMediaQuery } from "../utils/MediaQueryHook";
+
 const CardPortofolio = ({ img, title, text }) => {
+    
+    const { heightImgPortfolio } = useMediaQuery();
+    const height = heightImgPortfolio() 
   return (
-    <div className="transparan rounded-3 mb-3 mt-3" >
-      <div className="col-12 rounded-3" 
+    <div className="rounded-3 m-1 mt-4" >
+      <div 
+        className="col-12  rounded-top-3 transparan-white" 
+        style={{width:'100%', height:height}}
     //   style={{height:'10em', aspectRatio: '1 / 1' }}
       >
         <img style={{ width: '100%', height:'100%'}} className="card-img-top rounded-top-3" src={img} alt="" />

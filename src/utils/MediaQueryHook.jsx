@@ -14,5 +14,11 @@ export const useMediaQuery = () => {
     return isMobile ? '0.9em' : (isTablet ? '0.8em' : '1em');
   }
 
-  return { isMobile, isTablet, fontSizeName,  fontSizeDesc};
+    
+  const heightImgPortfolio = () =>{
+    return isMobile ? '150px' : (isTablet ? '180px' : '250px');
+  }
+
+
+  return { isMobile, isTablet, fontSizeName,  fontSizeDesc, heightImgPortfolio};
 };

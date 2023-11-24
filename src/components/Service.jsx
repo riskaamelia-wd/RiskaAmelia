@@ -6,7 +6,7 @@ const Service = () => {
     const { fontSizeDesc } = useMediaQuery();
     const fontSize = fontSizeDesc()
     return(
-        <div  className="d-flex flex-fill justify-content-around mt-5">
+        <div  className="d-flex flex-fill justify-content-between mt-5">
             <div className="col-lg-3 col-md-4 col-5">
                 <p className="fw-semibold fs-2 fs-md-1">My Awesome Service</p>
                 <p className="fw-light" style={{color:'var(--secondary)', fontSize: fontSize}}>Eget malesuada tortor ut sed. Tincidunt viverra malesuada nisl vehicula vestibulum. Ut blandit fermentum, cursus nulla. Imperdiet neque mi convallis quis interdum sagittis.</p>

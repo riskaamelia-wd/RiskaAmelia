@@ -10,7 +10,7 @@ const CardService = ({img, title, text}) => {
             <div className="d-flex">
                 <div className="col-2" style={{width:'4em', height:'4em'}}>
                     <img style={{width:'100%',height:'100%'}}
-                    className="rounded-3" src={img} alt={title} />
+                    className="" src={img} alt={title} />
                 </div>
                 <div className="ms-3 col- 9 d-flex justify-content-center flex-column ms-2 me-2">
                     <p className="m-0 fw-semibold">{title}</p>

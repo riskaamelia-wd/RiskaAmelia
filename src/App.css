@@ -13,7 +13,14 @@ body, * {
   border-radius: 6px;
   border: 1px rgba(255, 255, 255, 0.12);
   backdrop-filter: blur(9px);
+}
 
+
+.transparan-white{
+  background-color: rgba(102, 95, 95, 0.2);
+  border-radius: 6px;
+  border: 1px rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(9px);
 }
 
 /* .logo {
