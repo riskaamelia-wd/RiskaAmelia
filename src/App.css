@@ -6,6 +6,12 @@
 
 body, * {
   font-family: 'Poppins', sans-serif;
+  max-width: 100%;
+}
+
+html{  
+  background-color: #030E21;
+  max-width: 100%;
 }
 
 .transparan{
