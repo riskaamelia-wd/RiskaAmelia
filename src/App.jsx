@@ -7,14 +7,17 @@ import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap/dist/js/bootstrap.js'
 import 'bootstrap-icons/font/bootstrap-icons.css'
 import Home from './pages/Home'
+import client from './utils/apollo-client'
+import { ApolloProvider } from '@apollo/client'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <>
+    <ApolloProvider client={client}>
+      
       <Home/>
-    </>
+    </ApolloProvider>
   )
 }
 

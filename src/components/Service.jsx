@@ -11,12 +11,7 @@ const Service = ({id}) => {
                 <p className="fw-semibold fs-2 fs-md-1 text-nowrap">My Awesome Service</p>
                 <p className="fw-light" style={{color:'var(--secondary)', fontSize: fontSize}}>Eget malesuada tortor ut sed. Tincidunt viverra malesuada nisl vehicula vestibulum. Ut blandit fermentum, cursus nulla. Imperdiet neque mi convallis quis interdum sagittis.</p>
             </div>
-            <div className="col-md-6 col-6 justify-content-end flex-column d-flex">
-                {/* <CardService
-                img={test}
-                title={'Website'}
-                text={'50+ Project'}
-                />  */}
+            <div className="col-md-6 col-7 justify-content-center flex-column d-flex">
                 <CardService
                 img={test}
                 title={'Website'}

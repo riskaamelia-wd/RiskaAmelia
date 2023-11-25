@@ -1,7 +1,21 @@
 import CardPortofolio from "../elements/CardPortofolio"
 import test from '../assets/lia.jpeg'
+import { useQuery } from "@apollo/client"
+import { GETPORTFOLIO } from "../graphql/query"
+import { useEffect, useState } from "react"
+import { useMediaQuery } from "../utils/MediaQueryHook"
 
 const Portfolio = ({id}) => {
+    const {data, loading, error} = useQuery(GETPORTFOLIO)
+    const [port, setPort] = useState([])
+    useEffect(()=>{
+        if(!loading && error !== undefined){
+            setPort(data.portfolio)
+        }
+    })
+
+    const {portfolio} = useMediaQuery()
+    const cardPort = portfolio();
     return(
         <div className="p-3 mb-3 mt-5  transparan" id={id}>
             <div className="d-flex justify-content-between">
@@ -12,48 +26,20 @@ const Portfolio = ({id}) => {
                 </div>
             </div>
             <div className="d-flex row">
-                <div className="col-md-4 col-6">               
-                    <CardPortofolio
-                    img={test}
-                    title={'Website'}
-                    text={'50+ Project'}
-                    />
-                </div>
-                <div className="col-md-4 col-6">               
-                    <CardPortofolio
-                    img={test}
-                    title={'Website'}
-                    text={'50+ Project'}
-                    />
-                </div>
-                <div className="col-md-4 col-6">               
-                    <CardPortofolio
-                    img={test}
-                    title={'Website'}
-                    text={'50+ Project'}
-                    />
-                </div>
-                <div className="col-md-4 col-6">               
-                    <CardPortofolio
-                    img={test}
-                    title={'Website'}
-                    text={'50+ Project'}
-                    />
-                </div>
-                <div className="col-md-4 col-6">               
-                    <CardPortofolio
-                    img={test}
-                    title={'Website'}
-                    text={'50+ Project'}
-                    />
-                </div>
-                <div className="col-md-4 col-6">               
-                    <CardPortofolio
-                    img={test}
-                    title={'Website'}
-                    text={'50+ Project'}
-                    />
-                </div>
+                {
+                    loading ?
+                    <p>loading...</p>
+                    :
+                    data?.portfolio.slice(0, cardPort).map((item, idx)=>(
+                        <div className="col-md-4 col-6">               
+                            <CardPortofolio
+                            img={item.img}
+                            title={item.title}
+                            text={item.category}
+                            />
+                        </div>
+                    ))
+                }
             </div>
         </div>
     )
