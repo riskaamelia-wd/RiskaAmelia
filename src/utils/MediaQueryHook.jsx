@@ -5,7 +5,9 @@ export const useMediaQuery = () => {
   const isMobile = useReactResponsiveMediaQuery({ maxWidth: 588 });
   const isTablet = useReactResponsiveMediaQuery({ minWidth: 589, maxWidth: 1023 });
 
-  
+  const portfolio = () => {
+    return isMobile ? 4 : (isTablet? 6 : 6)
+  }
   const fontSizeName =() =>{
       return isMobile ? '2em' : (isTablet ? '3em' : '5em');
   }
@@ -20,5 +22,5 @@ export const useMediaQuery = () => {
   }
 
 
-  return { isMobile, isTablet, fontSizeName,  fontSizeDesc, heightImgPortfolio};
+  return { isMobile, isTablet, fontSizeName,  fontSizeDesc, heightImgPortfolio, portfolio};
 };

@@ -1,4 +1,4 @@
-const Navbar = () => {
+const Navbar = ({service, portfolio, contact, about}) => {
     return(
         <>
             <nav className="navbar navbar-expand-lg">
@@ -10,16 +10,16 @@ const Navbar = () => {
                     <div className="collapse navbar-collapse d-lg-flex justify-content-lg-end" id="navbarSupportedContent">
                         <ul className="navbar-nav">
                             <li className="nav-link">
-                                <a href="#" className="nav-link">Service</a>
+                                <a href={service} className="nav-link">Service</a>
                             </li>
                             <li className="nav-link">
-                                <a href="#" className="nav-link">portofolio</a>
+                                <a href={portfolio} className="nav-link">portofolio</a>
                             </li>
                             <li className="nav-link">
-                                <a href="#" className="nav-link">Contact</a>
+                                <a href={contact} className="nav-link">Contact</a>
                             </li>
                             <li className="nav-link">
-                                <a href="#" className="nav-link">About</a>
+                                <a href={about} className="nav-link">About</a>
                             </li>
                         </ul>
                     </div>

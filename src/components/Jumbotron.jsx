@@ -2,7 +2,7 @@ import NumberandText from "../elements/NumberandText"
 import photo from '../assets/lia.jpeg'
 import { useMediaQuery } from '../utils/MediaQueryHook'
 
-const Jumbotorn = () => {    
+const Jumbotorn = ({id}) => {    
     // const isMobile = useMediaQuery({ maxWidth: 588 });
     // const isTablet = useMediaQuery({ minWidth: 588, maxWidth: 1023 });
     // const fontSizeName = isMobile ? '2em' : (isTablet ? '3em' : '5em');
@@ -14,7 +14,7 @@ const Jumbotorn = () => {
   const getfontSizeDesc = fontSizeDesc()
 
     return(
-        <div className=" mt-md-5 mt-3  mb-md-5 d-flex flex-row flex-fill justify-content-between">
+        <div id={id} className=" mt-md-5 mt-3  mb-md-5 d-flex flex-row flex-fill justify-content-between">
             <div className="col-6 col-md-3 col-lg-2 d-flex flex-column justify-content-center position-relative">
                 <h1 className=" fw-semibold text-nowrap mt-2 mt-md-0" style={{fontSize:getfontSizeName }}>Riska Amelia</h1>
                 <hr style={{ borderColor: 'var(--warning)', borderWidth: '4px', opacity: '0.75' }} className="col-7"/>

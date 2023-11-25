@@ -1,9 +1,9 @@
 import CardPortofolio from "../elements/CardPortofolio"
 import test from '../assets/lia.jpeg'
 
-const Portfolio = () => {
+const Portfolio = ({id}) => {
     return(
-        <div className="p-3 mb-3 mt-5  transparan">
+        <div className="p-3 mb-3 mt-5  transparan" id={id}>
             <div className="d-flex justify-content-between">
                 <p className="fw-semibold fs-2 fs-md-1 m-0">Our Portofolio</p>
                 <div className="d-flex align-items-center" style={{color:'var(--warning)'}}>

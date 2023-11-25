@@ -23,6 +23,40 @@ body, * {
   backdrop-filter: blur(9px);
 }
 
+/* input-border-color, input-focus-border-color, input-box-shadow{
+  border-color: var(--warning) !important;
+  color: var(--warning) !important;
+} */
+.input-border-color:focus {
+  border-color: var(--warning) !important;
+}
+
+.input-border-color {
+  border-color: var(--warning) !important;
+}
+
+.input-box-shadow:focus {
+  box-shadow: 0 0 10px rgba(248, 231, 161, 0.3) !important;
+}
+
+.input-background {
+  background-color: rgba(9, 20, 39, 0.80);
+  backdrop-filter: blur(9px);
+}
+
+.input-text-color:focus {
+  color: var(--warning) !important;
+}
+
+a{
+  color: white !important;
+  text-decoration: none;
+}
+
+a:hover{
+  color: var(--warning) !important;
+  text-decoration: none;
+}
 /* .logo {
   height: 6em;
   padding: 1.5em;

@@ -7,6 +7,7 @@ import CardPortofolio from '../elements/CardPortofolio'
 import Service from '../components/Service'
 import Portfolio from '../components/Portfolio'
 import Contact from '../components/Contact'
+import Footer from '../components/Footer'
 
 const Home = () => {
     
@@ -20,13 +21,27 @@ const Home = () => {
             <img src={vektor2} alt="" />
           </div>        
           <div className=' container position-absolute'>
-            <Navbar/>
-            <Jumbotorn/>      
-            <Service/>
-            <Portfolio/>  
-            <Contact/>
+            <Navbar
+              contact={'#contact'}
+              service={'#service'}
+              about={'#about'}
+              portfolio={'#portfolio'}
+            />
+            <Jumbotorn
+              id={'about'}
+            />      
+            <Service
+              id={'service'}
+            />
+            <Portfolio
+              id={'portfolio'}
+            />  
+            <Contact
+              id={'contact'}
+            />
           </div>
         </div>
+        <Footer/>
       </div>
     )
 }
