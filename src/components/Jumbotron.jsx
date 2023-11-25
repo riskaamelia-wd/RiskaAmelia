@@ -14,7 +14,7 @@ const Jumbotorn = ({id}) => {
   const getfontSizeDesc = fontSizeDesc()
 
     return(
-        <div id={id} className=" mt-md-5 mt-3  mb-md-5 d-flex flex-row row flex-fill justify-content-between">
+        <div id={id} className="col-10 col-md-11 row mt-md-5 mt-3  d-flex m-auto justify-content-between mb-md-5">
             <div className="col-12 col-md-5 col-lg-3 d-flex flex-column justify-content-center position-relative">
                 <h1 className=" fw-semibold text-nowrap mt-2 mt-md-0" style={{fontSize:getfontSizeName }}>Riska Amelia</h1>
                 <hr style={{ borderColor: 'var(--warning)', borderWidth: '4px', opacity: '0.75' }} className="col-7"/>

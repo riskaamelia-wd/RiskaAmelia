@@ -8,13 +8,13 @@ export const useMediaQuery = () => {
   const portfolio = () => {
     return isMobile ? 4 : (isTablet? 6 : 6)
   }
-  
+
   const fontSizeName =() =>{
       return isMobile ? '2.7em' : (isTablet ? '3.8em' : '6em');
   }
 
   const fontSizeDesc = () =>{
-    return isMobile ? '0.9em' : (isTablet ? '0.8em' : '1em');
+    return isMobile ? '0.8em' : (isTablet ? '0.8em' : '1em');
   }
 
     
