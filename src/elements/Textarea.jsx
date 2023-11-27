@@ -1,4 +1,4 @@
-const Textarea = ({placeholder, onChange, value}) =>{
+const Textarea = ({placeholder, onChange, value, name}) =>{
     return(
         <textarea        
             placeholder={placeholder}
@@ -6,6 +6,8 @@ const Textarea = ({placeholder, onChange, value}) =>{
             onChange={onChange}
             value={value}
             rows={5}
+            name={name}
+            id={name}
         >
 
         </textarea>

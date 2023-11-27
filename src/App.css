@@ -25,7 +25,7 @@ html{
 .transparan-white{
   background-color: rgba(102, 95, 95, 0.2);
   border-radius: 6px;
-  border: 1px rgba(255, 255, 255, 0.12);
+  border: 1px rgba(210, 184, 184, 0.12);
   backdrop-filter: blur(9px);
 }
 
@@ -41,17 +41,16 @@ html{
   border-color: var(--warning) !important;
 }
 
-.input-box-shadow:focus {
-  box-shadow: 0 0 10px rgba(248, 231, 161, 0.3) !important;
-}
-
 .input-background {
   background-color: rgba(9, 20, 39, 0.80);
   backdrop-filter: blur(9px);
+  /* color: var(--warning) !important; */
 }
 
 .input-text-color:focus {
-  color: var(--warning) !important;
+  color: black !important;
+  background-color: var(--warning) !important;
+  box-shadow: 0 0 10px rgba(248, 231, 161, 0.3) !important;
 }
 
 a{
@@ -62,6 +61,11 @@ a{
 a:hover{
   color: var(--warning) !important;
   text-decoration: none;
+}
+
+.btn-submit:hover{
+  background-color: black !important;
+  color: var(--warning) !important;
 }
 /* .logo {
   height: 6em;

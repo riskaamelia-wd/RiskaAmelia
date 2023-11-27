@@ -12,3 +12,15 @@ export const GETPORTFOLIO = gql`
         }
     }
 `
+
+export const GETCONTACT = gql`
+    query MyQuery {
+        contact {
+        email
+        id
+        message
+        name
+        phone
+        }
+    }
+`

@@ -3,11 +3,89 @@ import { useMediaQuery } from "../utils/MediaQueryHook";
 import test from '../assets/lia.jpeg'
 import Input from "../elements/Input";
 import Textarea from "../elements/Textarea";
+import { useState } from "react";
+import { useMutation } from "@apollo/client";
+import { ADDCONTACT } from "../graphql/mutation";
+import { GETCONTACT } from "../graphql/query";
+import emailjs from '@emailjs/browser'
 
 const Contact = ({id}) => {
-    
+    const [data, setData] = useState({
+        name :'',
+        message :'',
+        phone :'',
+        email:''
+    })
     const { fontSizeDesc } = useMediaQuery();
     const fontSize = fontSizeDesc()
+    const [add] = useMutation(ADDCONTACT,{
+        refetchQueries:[{query:GETCONTACT}]
+    })
+
+    const handleChange = (e) => {
+        const name = e.target.name;
+        const value = e.target.value;
+        let setState = true
+
+        if(setState) {
+            setData({...data, [name]:value})
+            console.log(data);
+        }
+    }
+
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+        // setData({})
+        if(window.confirm('Are you sure you want to submit?')){
+            await add({
+                variables:{
+                    object:{
+                        name : data?.name,
+                        phone : data?.phone,
+                        email: data.email,
+                        message : data.message
+                    }
+                }
+            })      
+            await emailjs      
+                .send(
+                    'service_2ow4c38',
+                    'template_g2g9yxq',
+                    {
+                        name : data?.name,
+                        phone : data?.phone,
+                        email : data?.email,
+                        message : data?.message
+                    },
+                    'I4cPlwo89-sE8dr1w'
+                )
+                .then(
+                    (result) => {
+                    console.log(result.text);
+                    },
+                    (error) => {
+                    console.log(error.text);
+                    }
+                )
+            .then(() => {
+                alert('Successfully')
+            })
+            .catch((err) => {
+                alert(err.message)
+            })
+        }
+
+        resetFrom()
+    }
+
+    const resetFrom = () => {
+        setData({
+            name : '',
+            phone :'',
+            email :'',
+            message:''
+        })
+    }
     return(
         <div className="mt-5 mb-lg-5 col-10 col-md-11 m-auto" id={id}>
             <div className="text-center col-md-7 col-lg-6 col-11 m-auto">
@@ -43,29 +121,46 @@ const Contact = ({id}) => {
                         /> 
                         </div>         
                 </div>
-                <div className="col-md-7 col-lg-6 col-12 m-auto">
+                <form onSubmit={handleSubmit} className="col-md-7 col-lg-6 col-12 m-auto">
                     <div className="d-md-flex gap-2">
                         <Input
                             placeholder={'Full Name'}
+                            name={'name'}
+                            type={'text'}
+                            value={data?.name}
+                            onChange={handleChange}
+
                         />
                         <Input
                             placeholder={'Your Email'}
+                            name={'email'}
+                            type={'email'}
+                            value={data?.email}
+                            onChange={handleChange}
                         />
                     </div>
                     <Input
                         placeholder={'Phone Number'}
+                        name={'phone'}
+                        type={'text'}
+                        value={data?.phone}
+                        onChange={handleChange}
                     />
                     <Textarea
                         placeholder={'Message'}
+                        name={'message'}
+                        value={data?.message}
+                        onChange={handleChange}
                     />                    
                     <button 
-                        className="btn rounded-2 text-black mb-5 mt-3 "
+                        // disabled={}
+                        className="btn btn-submit rounded-2 text-black mb-5 mt-3 "
                         type="submit"
                         style={{backgroundColor:'var(--warning)'}}
                     >
                         Submit
                     </button>
-                </div>
+                </form>
             </div>
         </div>
     )
