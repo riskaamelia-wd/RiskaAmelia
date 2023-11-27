@@ -4,6 +4,7 @@ import { useQuery } from "@apollo/client"
 import { GETPORTFOLIO } from "../graphql/query"
 import { useEffect, useState } from "react"
 import { useMediaQuery } from "../utils/MediaQueryHook"
+import { NavLink } from "react-router-dom";
 
 const Portfolio = ({id}) => {
     const {data, loading, error} = useQuery(GETPORTFOLIO)
@@ -12,6 +13,7 @@ const Portfolio = ({id}) => {
         if(!loading && error !== undefined){
             setPort(data.portfolio)
         }
+        console.log(data?.portfolio?.link);
     })
 
     const {portfolio} = useMediaQuery()
@@ -21,23 +23,23 @@ const Portfolio = ({id}) => {
             <div className="d-flex justify-content-between">
                 <p className="fw-semibold fs-2 fs-md-1 m-0">Our Portofolio</p>
                 <div className="d-flex align-items-center" style={{color:'var(--warning)'}}>
-                    <p className="m-0">See All</p>
+                    <NavLink to={'/allPortfolio'} className="m-0">See All</NavLink>
                 <i  className="bi bi-arrow-right ms-3"></i>
                 </div>
             </div>
             <div className="d-flex row">
                 {
                     loading ?
-                    <p>loading...</p>
+                    <div className="lds-facebook"><div></div><div></div><div></div></div>
                     :
                     data?.portfolio.slice(0, cardPort).map((item, idx)=>(
-                        <div className="col-md-4 col-6">               
+                        <a target='_blank' href={item.link} className="col-md-4 col-6">               
                             <CardPortofolio
                             img={item.img}
                             title={item.title}
                             text={item.category}
                             />
-                        </div>
+                        </a>
                     ))
                 }
             </div>

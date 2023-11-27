@@ -8,6 +8,7 @@ export const GETPORTFOLIO = gql`
         desc
         id
         img
+        link
         title
         }
     }

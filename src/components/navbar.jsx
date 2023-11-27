@@ -3,7 +3,7 @@ const Navbar = ({service, portfolio, contact, about}) => {
         <>
             <nav className="navbar navbar-expand-lg">
                 <div className="col-10 col-md-11 m-auto d-flex justify-content-between">
-                    <a href="" className="navbar-brand ps-3 fw-semibold text-start">LIA .</a>        
+                    <a href="/" className="navbar-brand ps-3 fw-semibold text-start">LIA .</a>        
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                     </button>

@@ -9,14 +9,17 @@ import 'bootstrap-icons/font/bootstrap-icons.css'
 import Home from './pages/Home'
 import client from './utils/apollo-client'
 import { ApolloProvider } from '@apollo/client'
+import Layout from './templates/Layout'
+import { BrowserRouter } from 'react-router-dom';
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <ApolloProvider client={client}>
-      
-      <Home/>
+      <BrowserRouter>
+        <Layout/> 
+      </BrowserRouter>
     </ApolloProvider>
   )
 }
