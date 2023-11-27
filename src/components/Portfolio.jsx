@@ -20,7 +20,7 @@ const Portfolio = ({id}) => {
     const {portfolio} = useMediaQuery()
     const cardPort = portfolio();
     return(
-        <div className="p-3 mb-3 mt-5 col-10 col-md-11 m-auto transparan" id={id}>
+        <div className="pt-2 pb-2 mb-3 mt-5 col-10 col-md-11 m-auto transparan" id={id}>
             <div className="d-flex justify-content-between">
                 <p className="fw-semibold fs-2 fs-md-1 m-0">Our Portofolio</p>
                 <div className="d-flex align-items-center" style={{color:'var(--warning)'}}>
@@ -28,7 +28,7 @@ const Portfolio = ({id}) => {
                 <i  className="bi bi-arrow-right ms-3"></i>
                 </div>
             </div>
-            <div className="d-flex row">
+            <div className="d-flex row m-0">
                 {
                     loading ?
                     <div className="lds-facebook"><div></div><div></div><div></div></div>

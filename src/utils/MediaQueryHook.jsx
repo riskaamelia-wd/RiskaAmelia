@@ -19,7 +19,7 @@ export const useMediaQuery = () => {
 
     
   const heightImgPortfolio = () =>{
-    return isMobile ? '150px' : (isTablet ? '180px' : '250px');
+    return isMobile ? '100px' : (isTablet ? '160px' : '250px');
   }
 
 

@@ -9,6 +9,7 @@ import { ADDCONTACT } from "../graphql/mutation";
 import { GETCONTACT } from "../graphql/query";
 import emailjs from '@emailjs/browser'
 import { NavLink } from "react-router-dom";
+import {motion} from 'framer-motion'
 
 const Contact = ({id}) => {
     const [data, setData] = useState({
@@ -89,30 +90,23 @@ const Contact = ({id}) => {
     }
     return(
         <div className="mt-5 mb-lg-5 col-10 col-md-11 m-auto" id={id}>
-            <div className="text-center col-md-7 col-lg-6 col-11 m-auto">
+            <div className="text-center col-md-7 col-lg-6 col-12 m-auto">
                 <p className="fw-semibold fs-2 fs-md-1">Let's Discuss Your <span style={{color:'var(--warning)'}}>Project</span></p>
                 <p style={{fontSize:fontSize, color:'var(--secondary)'}}>Let's make something new, different and more meaningful or make thing more visual or conceptual</p>
             </div>
             <div className="d-flex mt-4 flex-wrap-reverse justify-content-between row">
-                <div className="col-md-5 col-lg-3 m-auto">    
-                    <div className="row">
-                        <a target="_blank" href={'https://wa.link/hp10p5'} className="col-6 col-md-12">
-                            <CardService
-                                icon={<i style={{fontSize:'25px'}} className="bi bi-telephone text-black mt-1"></i>}
-                                title={'Call Me'}
-                                text={'+6282218338566'}
-                                style={{width:'3em', height:'3em', backgroundColor:'var(--warning)'}}
-                            />   
-                        </a>
-                        <div className="col-6 col-md-12">
-                            <CardService
-                                icon={<i style={{fontSize:'25px'}} className="bi bi-geo-alt text-black mt-1 "></i>}
-                                title={'Address'}
-                                text={'Jakarta'}              
-                                style={{width:'3em', height:'3em', backgroundColor:'var(--warning)'}}
-                            /> 
-                        </div>
-                    </div>       
+                <div className="col-md-5 col-lg-3 m-auto">  
+                    <motion.a                 
+      whileHover={{ scale: 1.1 }}
+    //   transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                        target="_blank" href={'https://wa.link/hp10p5'} className="col-6 col-md-12">
+                        <CardService
+                            icon={<i style={{fontSize:'25px'}} className="bi bi-telephone text-black mt-1"></i>}
+                            title={'Call Me'}
+                            text={'+6282218338566'}
+                            style={{width:'3em', height:'3em', backgroundColor:'var(--warning)'}}
+                        />   
+                    </motion.a>
                     <a href="mailto:tugasriskaamelia@gmail.com" target="_blank" className="col-8 col-md-12 m-auto">
                         <CardService
                             icon={<i style={{fontSize:'25px'}} className="bi bi-envelope-at text-black mt-1 "></i>}
@@ -120,7 +114,13 @@ const Contact = ({id}) => {
                             text={'tugasriskaamelia@gmail.com'}
                             style={{width:'3em', height:'3em', backgroundColor:'var(--warning)'}}
                         /> 
-                        </a>         
+                        </a>                            
+                    <CardService
+                        icon={<i style={{fontSize:'25px'}} className="bi bi-geo-alt text-black mt-1 "></i>}
+                        title={'Address'}
+                        text={'Jakarta'}              
+                        style={{width:'3em', height:'3em', backgroundColor:'var(--warning)'}}
+                    /> 
                 </div>
                 <form onSubmit={handleSubmit} className="col-md-7 col-lg-6 col-12 m-auto">
                     <div className="d-md-flex gap-2">

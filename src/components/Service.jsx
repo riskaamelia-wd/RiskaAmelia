@@ -6,12 +6,12 @@ const Service = ({id}) => {
     const { fontSizeDesc } = useMediaQuery();
     const fontSize = fontSizeDesc()
     return(
-        <div id={id} className="col-10 col-md-11 m-auto d-flex justify-content-between mt-5 mb-lg-5">
-            <div className="col-lg-3 col-md-4 col-5">
+        <div id={id} className="col-10 col-md-11 row m-auto d-flex justify-content-evenly mt-5 mb-lg-5">
+            <div className="col-lg-4 col-md-4 col-12">
                 <p className="fw-semibold fs-2 fs-md-1 text-nowrap">My Awesome Service</p>
                 <p className="fw-light" style={{color:'var(--secondary)', fontSize: fontSize}}>Eget malesuada tortor ut sed. Tincidunt viverra malesuada nisl vehicula vestibulum. Ut blandit fermentum, cursus nulla. Imperdiet neque mi convallis quis interdum sagittis.</p>
             </div>
-            <div className="col-md-6 col-7 justify-content-center mt-sm-5 flex-column d-flex">
+            <div className="col-md-6 col-12 justify-content-center mt-2 flex-column d-flex">
                 <CardService
                 img={test}
                 title={'Website Design'}
