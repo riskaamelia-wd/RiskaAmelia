@@ -5,6 +5,7 @@ import { GETPORTFOLIO } from "../graphql/query"
 import { useEffect, useState } from "react"
 import { useMediaQuery } from "../utils/MediaQueryHook"
 import { NavLink } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const Portfolio = ({id}) => {
     const {data, loading, error} = useQuery(GETPORTFOLIO)
@@ -32,14 +33,24 @@ const Portfolio = ({id}) => {
                     loading ?
                     <div className="lds-facebook"><div></div><div></div><div></div></div>
                     :
-                    data?.portfolio.slice(0, cardPort).map((item, idx)=>(
-                        <a target='_blank' href={item.link} className="col-md-4 col-6">               
-                            <CardPortofolio
-                            img={item.img}
-                            title={item.title}
-                            text={item.category}
-                            />
-                        </a>
+                    data?.portfolio.slice(0, cardPort).map((item)=>(
+                        <motion.div
+                            key={item.id}
+                            className="col-md-4 col-6"
+                            whileHover={{ scale: 1.1 }} 
+                            initial={{ opacity: 0, y: 20 }} 
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.4 }}
+                            >
+                            <a target='_blank' href={item.link} className="">               
+                                <CardPortofolio
+                                key={item.id}
+                                img={item.img}
+                                title={item.title}
+                                text={item.category}
+                                />
+                            </a>
+                            </motion.div>
                     ))
                 }
             </div>

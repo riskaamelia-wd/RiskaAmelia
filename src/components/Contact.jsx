@@ -8,6 +8,7 @@ import { useMutation } from "@apollo/client";
 import { ADDCONTACT } from "../graphql/mutation";
 import { GETCONTACT } from "../graphql/query";
 import emailjs from '@emailjs/browser'
+import { NavLink } from "react-router-dom";
 
 const Contact = ({id}) => {
     const [data, setData] = useState({
@@ -95,14 +96,14 @@ const Contact = ({id}) => {
             <div className="d-flex mt-4 flex-wrap-reverse justify-content-between row">
                 <div className="col-md-5 col-lg-3 m-auto">    
                     <div className="row">
-                        <div className="col-6 col-md-12">
+                        <a target="_blank" href={'https://wa.link/hp10p5'} className="col-6 col-md-12">
                             <CardService
                                 icon={<i style={{fontSize:'25px'}} className="bi bi-telephone text-black mt-1"></i>}
                                 title={'Call Me'}
                                 text={'+6282218338566'}
                                 style={{width:'3em', height:'3em', backgroundColor:'var(--warning)'}}
                             />   
-                        </div>
+                        </a>
                         <div className="col-6 col-md-12">
                             <CardService
                                 icon={<i style={{fontSize:'25px'}} className="bi bi-geo-alt text-black mt-1 "></i>}
@@ -112,14 +113,14 @@ const Contact = ({id}) => {
                             /> 
                         </div>
                     </div>       
-                    <div className="col-8 col-md-12 m-auto">
+                    <a href="mailto:tugasriskaamelia@gmail.com" target="_blank" className="col-8 col-md-12 m-auto">
                         <CardService
                             icon={<i style={{fontSize:'25px'}} className="bi bi-envelope-at text-black mt-1 "></i>}
                             title={'Email Me'}
                             text={'tugasriskaamelia@gmail.com'}
                             style={{width:'3em', height:'3em', backgroundColor:'var(--warning)'}}
                         /> 
-                        </div>         
+                        </a>         
                 </div>
                 <form onSubmit={handleSubmit} className="col-md-7 col-lg-6 col-12 m-auto">
                     <div className="d-md-flex gap-2">
