@@ -130,6 +130,9 @@
 .painting-page :focus-visible {
   outline-color: var(--garden-paper);
 }
+.painting-page .painting-page-index {
+  position: fixed;
+}
 @media (max-width: 767px) {
   .painting-page .painting-page-frame {
     inset: 10px;
@@ -231,5 +234,33 @@
   }
   .painting-page .painting-page-index .journey-index-item {
     font-size: 12px;
+  }
+}
+.painting-page .project-discussion {
+  max-width: 65ch;
+  margin: 52px 0 44px;
+}
+.painting-page .project-discussion-section {
+  margin-top: 40px;
+}
+.painting-page .project-discussion-section:first-child {
+  margin-top: 0;
+}
+.painting-page .project-discussion-section h2 {
+  margin-bottom: 20px;
+  line-height: 1.15;
+}
+.painting-page .project-discussion-section p + p {
+  margin-top: 20px;
+}
+@media (max-width: 767px) {
+  .painting-page .project-discussion {
+    margin-top: 36px;
+  }
+  .painting-page .project-discussion-section {
+    margin-top: 32px;
+  }
+  .painting-page .project-discussion-section h2 {
+    font-size: 30px;
   }
 }

@@ -18,3 +18,7 @@ Both use built-in imagegen and retain their alpha channel after WebP optimizatio
 ## User portrait
 
 `public/images/riska-portrait.webp` is a built-in imagegen style-transfer of the user-supplied beige-hijab photograph, preserving the face and pose in an impressionist garden setting. [Exact portrait prompt](riska-portrait-artwork.md).
+
+## Project gallery covers
+
+The five projects use distinct decorative cover studies, separate from the project screenshot field. Existing pond, bridge and lily paintings cover SIMDIKLAT, SIMFONI and MUSRENBANGKOM. New original imagegen assets `public/images/flower-study.webp` and `public/images/garden-path.webp` cover Classy and GoFit. Exact prompts: [flower study](flower-study-artwork.md), [garden path](garden-path-artwork.md). Every cover is labeled as an illustration; project details remain factual.

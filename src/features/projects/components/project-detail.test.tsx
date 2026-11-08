@@ -6,7 +6,12 @@ const FIXTURE: Project = {
   title: "Fixture project",
   summary: "Test content only",
   technologies: ["React"],
-  sections: [{ heading: "Process", body: "Verified fixture text." }],
+  sections: [
+    {
+      heading: "Process",
+      body: "Verified fixture text.\n\nA separate contribution paragraph.",
+    },
+  ],
 };
 mock.module("../content", () => ({
   PROJECTS: [],
@@ -18,6 +23,8 @@ describe("project detail", () => {
     const html = renderToStaticMarkup(<ProjectDetail slug="test-only" />);
     expect(html).toContain("Fixture project");
     expect(html).toContain("Verified fixture text.");
+    expect(html).toContain("A separate contribution paragraph.");
+    expect(html).toContain('aria-labelledby="discussion-0"');
     expect(html).not.toContain("My role:");
     expect(html).not.toContain("Visit website");
   });

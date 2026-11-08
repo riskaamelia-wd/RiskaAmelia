@@ -65,3 +65,44 @@ test("verified projects have real detail routes and source attribution", async (
     0,
   );
 });
+
+for (const width of [360, 1440]) {
+  test(`SIMDIKLAT has a readable multi-paragraph discussion at ${width}`, async ({
+    page,
+  }) => {
+    await page.setViewportSize({ width, height: 900 });
+    await page.goto("/projects/simdiklat");
+    const discussion = page.locator(".project-discussion");
+    await expect(
+      discussion.getByRole("heading", {
+        name: "Understanding the legacy system",
+      }),
+    ).toBeVisible();
+    await expect(
+      discussion.getByRole("heading", {
+        name: "Implementation and integrations",
+      }),
+    ).toBeVisible();
+    await expect(
+      discussion.getByRole("heading", { name: "Data and performance" }),
+    ).toBeVisible();
+    await expect(discussion.locator("p")).toHaveCount(5);
+    await expect(discussion).toContainText("SIJULE, PINTAR, SIMPEG, and BSrE");
+    await expect(discussion).toContainText("wireframes");
+    await expect(discussion).not.toContainText("6,000,000");
+    await discussion
+      .getByRole("heading", { name: "Data and performance" })
+      .scrollIntoViewIfNeeded();
+    await page.screenshot({
+      path: `test-results/project-discussion-${width}.png`,
+    });
+    await expect(
+      page.getByRole("link", { name: "Source: LinkedIn" }),
+    ).toBeVisible();
+    expect(
+      await page.evaluate(
+        () => document.documentElement.scrollWidth <= innerWidth,
+      ),
+    ).toBe(true);
+  });
+}

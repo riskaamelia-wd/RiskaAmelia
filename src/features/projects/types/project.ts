@@ -7,6 +7,7 @@ export interface Project {
   title: string;
   summary: string;
   technologies: readonly string[];
+  artwork?: { src: string; alt: string };
   image?: { src: string; alt: string; width: number; height: number };
   liveUrl?: string;
   repositoryUrl?: string;

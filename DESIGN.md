@@ -33,3 +33,7 @@ The creations chapter offers five accessible petal-shaped project selectors and 
 ## Portrait and reading preference
 
 Use `public/images/riska-portrait.webp`, an original impressionist transformation of the user’s latest beige-hijab portrait, on the profile chapter and About page. Exact prompt and provenance: `docs/riska-portrait-artwork.md`. The user rejected the extra dark reading panels: remove content-area pseudo-element washes and keep the painting continuous behind text. Preserve the roomier 16–18px body typography and the original scene-wide shadow treatment.
+
+## Project painting gallery
+
+The project collection now behaves visually as a gallery of framed impressionist studies. Each real project has a distinct decorative artwork, a narrow muted-bronze rim, a paper mat, and its title/summary/technologies beneath as a museum-style label. Desktop uses two staggered columns; tablet/mobile use a single column. The entire artwork and label link to the existing project discussion. Artwork is stored separately from real screenshots and labeled as a painted cover study. Two new original flower/path covers complete the five-piece collection.

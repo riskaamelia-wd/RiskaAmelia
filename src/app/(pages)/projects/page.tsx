@@ -8,8 +8,8 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <CollectionPage
-      title="Ideas, made real."
-      description="A home for the websites I build and the little details that make them feel right."
+      title="A gallery of my work."
+      description="A collection of software projects, seen through the light and color of an impressionist garden."
     >
       <ProjectList />
     </CollectionPage>

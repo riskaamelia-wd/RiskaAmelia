@@ -38,14 +38,24 @@ export function ProjectDetail({ slug }: { slug: string }) {
           <strong>My role:</strong> {project.role}
         </p>
       ) : null}
-      {project.sections?.map((section) => (
-        <section key={section.heading} className="mb-10 max-w-2xl">
-          <h2 className="mb-4 text-2xl font-bold">{section.heading}</h2>
-          <p className="whitespace-pre-line leading-8 text-muted-foreground">
-            {section.body}
-          </p>
-        </section>
-      ))}
+      {project.sections?.length ? (
+        <div className="project-discussion">
+          {project.sections.map((section, index) => (
+            <section
+              key={section.heading}
+              className="project-discussion-section"
+              aria-labelledby={`discussion-${index}`}
+            >
+              <h2 id={`discussion-${index}`}>{section.heading}</h2>
+              {section.body.split("\n\n").map((paragraph, paragraphIndex) => (
+                <p key={paragraphIndex} className="text-muted-foreground">
+                  {paragraph}
+                </p>
+              ))}
+            </section>
+          ))}
+        </div>
+      ) : null}
       <div className="flex flex-wrap gap-8">
         {project.sourceUrl ? (
           <a className="text-link" href={project.sourceUrl}>
