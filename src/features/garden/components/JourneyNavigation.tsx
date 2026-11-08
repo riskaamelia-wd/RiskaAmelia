@@ -1,4 +1,5 @@
 import { ArrowDown, ArrowUp, Flower2 } from "lucide-react";
+import { GardenSound } from "./GardenSound";
 import { CHAPTERS } from "../chapters";
 export function JourneyNavigation({
   active,
@@ -20,18 +21,23 @@ export function JourneyNavigation({
         >
           Riska Amelia<span>.</span>
         </a>
-        <p className="journey-header-note">
-          A software engineer’s little garden
-        </p>
+        <div className="journey-header-center">
+          <p className="journey-header-note">
+            A software engineer’s little garden
+          </p>
+          <GardenSound />
+        </div>
         <a
           className="journey-connect"
+          aria-label="Let’s connect"
           href="#contact"
           onClick={(event) => {
             event.preventDefault();
             navigate(4);
           }}
         >
-          Let’s connect <Flower2 size={17} strokeWidth={1} aria-hidden="true" />
+          <span>Let’s connect</span>{" "}
+          <Flower2 size={17} strokeWidth={1} aria-hidden="true" />
         </a>
       </header>
       <nav aria-label="Explore the painting" className="journey-index">
@@ -58,7 +64,9 @@ export function JourneyNavigation({
           <span>05</span>
         </div>
         <span className="journey-footer-note">
-          An original world, inspired by impressionism.
+          {active === 0
+            ? "Touch the water. Follow your curiosity."
+            : "An original world, inspired by impressionism."}
         </span>
         <button
           className="journey-next"

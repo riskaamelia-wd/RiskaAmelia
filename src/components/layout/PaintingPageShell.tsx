@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
-import { CatArtwork } from "@/components/common/CatArtwork";
+import { PaintedCat } from "@/components/common/PaintedCat";
 import "@/styles/garden.css";
 import "@/styles/painting-pages.css";
 const LINKS = [
@@ -35,7 +35,7 @@ export function PaintingPageShell({ children }: { children: React.ReactNode }) {
       <a href="#main-content" className="journey-skip">
         Skip to content
       </a>
-      <header className="journey-header painting-page-header">
+      <header className="painting-page-header">
         <Link
           href="/"
           className="journey-wordmark"
@@ -90,8 +90,8 @@ export function PaintingPageShell({ children }: { children: React.ReactNode }) {
           Continue wandering <ArrowUpRight size={16} aria-hidden="true" />
         </Link>
       </footer>
-      <div className="painting-page-cat cat-art" aria-hidden="true">
-        <CatArtwork />
+      <div className="painting-page-cat" aria-hidden="true">
+        <PaintedCat />
       </div>
     </div>
   );

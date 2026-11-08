@@ -5,6 +5,9 @@ for (const width of [360, 1440]) {
     await page.setViewportSize({ width, height: 900 });
     await page.goto("/about");
     await expect(
+      page.getByRole("img", { name: "Riska Amelia", exact: true }),
+    ).toHaveAttribute("src", /riska-portrait/);
+    await expect(
       page.getByRole("heading", { name: "Experience", exact: true }),
     ).toBeVisible();
     await expect(

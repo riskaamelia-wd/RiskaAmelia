@@ -30,3 +30,4 @@ dist-ssr
 *.tsbuildinfo
 test-results/
 playwright-report/
+docs/

@@ -23,3 +23,13 @@ GSAP ScrollTrigger connects scroll to camera scale, position, and crossfades. Re
 ## Collection and detail pages
 
 Projects, writing, and their detail routes stay inside the same painted world: a fixed garden-bridge painting, botanical shadow wash, ivory serif text, inset frame and chapter-style side navigation. Long content scrolls naturally over the painting. Empty states are left-aligned narrative notes rather than centered cards. A contextual return link restores the matching chapter on the homepage. The earlier paper gallery shell has been removed.
+
+## Living garden interactions
+
+The original vector cat has been replaced by `public/images/monet-cat.webp`, an alpha-preserving imagegen illustration with impressionist brushwork. The clickable cat guides visitors between chapters and reacts gently to hover/focus. `willow-foreground.webp` moves faster than the water, then drifts out of view during the camera journey. Exact prompts are documented beside the other artwork sources.
+
+The creations chapter offers five accessible petal-shaped project selectors and a factual preview with a direct detail link. It uses LinkedIn-verified text; no invented screenshots or impact claims. The writing chapter offers an open-notebook invitation without fictitious articles. Click/tap on open water creates a finite, reused ripple pool. Optional synthesized breeze audio starts only on explicit interaction, pauses when hidden, and closes when leaving the journey. Reduced motion removes camera/hover transforms, reveals, and ripples.
+
+## Portrait and reading preference
+
+Use `public/images/riska-portrait.webp`, an original impressionist transformation of the user’s latest beige-hijab portrait, on the profile chapter and About page. Exact prompt and provenance: `docs/riska-portrait-artwork.md`. The user rejected the extra dark reading panels: remove content-area pseudo-element washes and keep the painting continuous behind text. Preserve the roomier 16–18px body typography and the original scene-wide shadow treatment.

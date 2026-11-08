@@ -1,0 +1,598 @@
+.painting-foreground {
+  position: absolute;
+  inset: -3%;
+  pointer-events: none;
+  transform-origin: 85% 15%;
+  will-change: transform, opacity;
+  opacity: 0.75;
+}
+.pond-light {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at 74% 44%,
+    rgb(244 237 193 / 10%),
+    transparent 48%
+  );
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
+.painting-stage[data-chapter="0"] .journey-content {
+  width: min(740px, 70vw);
+}
+.painting-stage[data-chapter="0"] .journey-title {
+  font-size: clamp(62px, 6.8vw, 98px);
+}
+.cat-guide {
+  position: absolute;
+  right: 18%;
+  bottom: 105px;
+  width: 142px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition:
+    translate 0.8s,
+    opacity 0.4s;
+}
+.cat-guide-portrait {
+  width: 100%;
+  height: 160px;
+  object-fit: contain;
+  filter: drop-shadow(0 9px 12px rgb(9 31 28 / 25%));
+  transition: transform 0.6s;
+}
+.cat-guide:hover .cat-guide-portrait,
+.cat-guide:focus-visible .cat-guide-portrait {
+  transform: translateY(-5px) rotate(-3deg);
+}
+.cat-guide-whisper {
+  font-family: var(--font-cormorant), Georgia, serif;
+  font-size: 17px;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateY(5px);
+  transition:
+    opacity 0.3s,
+    transform 0.3s;
+  text-shadow: 0 1px 8px var(--garden-ink);
+}
+.cat-guide:hover .cat-guide-whisper,
+.cat-guide:focus-visible .cat-guide-whisper {
+  opacity: 1;
+  transform: none;
+}
+.cat-guide-invitation {
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  border-bottom: 1px solid var(--garden-rule);
+  padding-bottom: 5px;
+}
+.cat-guide[data-chapter="1"] {
+  translate: -24px -8px;
+}
+.cat-guide[data-chapter="2"] {
+  right: 17%;
+  width: 95px;
+  bottom: 100px;
+}
+.cat-guide[data-chapter="2"] .cat-guide-portrait {
+  height: 110px;
+}
+.cat-guide[data-chapter="3"] {
+  translate: -18px -20px;
+}
+.water-ripples {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+.water-ripple {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 110px;
+  height: 40px;
+  border: 1px solid rgb(255 251 237 / 60%);
+  border-radius: 50%;
+  opacity: 0;
+}
+.water-ripple::after {
+  content: "";
+  position: absolute;
+  inset: 7px 14px;
+  border: 1px solid rgb(255 251 237 / 35%);
+  border-radius: 50%;
+}
+
+.garden-sound {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 10px;
+  letter-spacing: 0.03em;
+  min-height: 44px;
+  cursor: pointer;
+}
+.garden-sound:disabled {
+  opacity: 0.65;
+  cursor: default;
+}
+.painting-stage[data-chapter="2"] .journey-content {
+  width: 39%;
+}
+.painting-stage[data-chapter="2"] .journey-title {
+  font-size: clamp(56px, 5.4vw, 78px);
+}
+.project-reflections {
+  position: absolute;
+  right: 20%;
+  top: 50%;
+  width: min(330px, 29vw);
+  transform: translateY(-46%);
+}
+.reflection-tabs {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+.reflection-tab {
+  min-width: 36px;
+  min-height: 44px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+.reflection-tab > span:last-child {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  clip-path: inset(50%);
+  overflow: hidden;
+}
+.reflection-petal {
+  width: 18px;
+  height: 18px;
+  border-radius: 12px 1px 12px 1px;
+  border: 1px solid var(--garden-paper);
+  opacity: 0.65;
+  transition:
+    transform 0.4s,
+    opacity 0.4s,
+    background 0.4s;
+}
+.reflection-tab[aria-pressed="true"] .reflection-petal {
+  transform: rotate(-45deg) scale(1.2);
+  opacity: 1;
+  background: var(--garden-paper);
+}
+.reflection-tab:hover .reflection-petal {
+  opacity: 1;
+  transform: translateY(-3px);
+}
+.reflection-story {
+  border-top: 1px solid var(--garden-rule);
+  padding-top: 22px;
+}
+.reflection-counter {
+  font-size: 10px;
+  letter-spacing: 0.13em;
+}
+.reflection-story h2 {
+  font-family: var(--font-cormorant), Georgia, serif;
+  font-size: 38px;
+  line-height: 1.1;
+  font-weight: 400;
+  margin: 13px 0 16px;
+}
+.reflection-story p {
+  font-size: 16px;
+  line-height: 1.7;
+}
+.reflection-story .reflection-technologies {
+  font-size: 10px;
+  margin-top: 14px;
+}
+.reflection-story .journey-action {
+  margin-top: 18px;
+}
+.reflection-waterline {
+  display: block;
+  height: 1px;
+  background: var(--garden-rule);
+  margin-top: 14px;
+  transform: scaleX(0.85);
+}
+.journey-content h1 {
+  animation: brush-reveal 0.7s ease-out both;
+}
+@keyframes brush-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media (max-width: 1000px) and (min-width: 768px) {
+  .project-reflections {
+    right: 24%;
+    width: 28%;
+  }
+  .painting-stage[data-chapter="2"] .journey-title {
+    font-size: 54px;
+  }
+  .reflection-story h2 {
+    font-size: 30px;
+  }
+  .cat-guide {
+    right: 22%;
+    width: 110px;
+  }
+  .cat-guide-portrait {
+    height: 125px;
+  }
+}
+@media (max-width: 767px) {
+  .painting-stage[data-chapter="0"] .journey-content {
+    width: 84%;
+  }
+  .painting-stage[data-chapter="0"] .journey-title {
+    font-size: clamp(46px, 10.8vw, 72px);
+  }
+  .cat-guide {
+    width: 90px;
+    bottom: 153px;
+    right: 7%;
+  }
+  .cat-guide-portrait {
+    height: 95px;
+  }
+  .cat-guide-whisper {
+    display: none;
+  }
+  .cat-guide-invitation {
+    font-size: 9px;
+  }
+
+  .garden-sound {
+    font-size: 9px;
+  }
+  .painting-stage[data-chapter="2"] .journey-content {
+    top: 145px;
+    width: 84%;
+    transform: none;
+  }
+  .painting-stage[data-chapter="2"] .journey-caption {
+    margin-bottom: 12px;
+  }
+  .painting-stage[data-chapter="2"] .journey-title {
+    font-size: 42px;
+    line-height: 1;
+    margin-bottom: 12px;
+  }
+  .painting-stage[data-chapter="2"] .journey-copy {
+    display: none;
+  }
+  .painting-stage[data-chapter="2"] .journey-content .journey-action {
+    min-height: 36px;
+    margin-top: 0;
+  }
+  .project-reflections {
+    left: 8%;
+    right: 8%;
+    top: 345px;
+    width: 84%;
+    transform: none;
+  }
+  .reflection-tabs {
+    margin-bottom: 8px;
+    gap: 8px;
+  }
+  .reflection-tab {
+    min-height: 32px;
+  }
+  .reflection-story {
+    padding-top: 12px;
+  }
+  .reflection-story h2 {
+    font-size: 30px;
+    margin: 7px 0 9px;
+  }
+  .reflection-story .journey-action {
+    min-height: 36px;
+    margin-top: 10px;
+  }
+  .reflection-story .reflection-technologies {
+    margin-top: 8px;
+  }
+  .reflection-waterline {
+    display: none;
+  }
+  .painting-stage[data-chapter="2"] .cat-guide {
+    display: none;
+  }
+}
+@media (max-height: 760px) and (max-width: 767px) {
+  .painting-stage[data-chapter="2"] .journey-content {
+    top: 112px;
+  }
+  .painting-stage[data-chapter="2"] .journey-title {
+    font-size: 36px;
+  }
+  .painting-stage[data-chapter="2"] .journey-caption {
+    display: none;
+  }
+  .project-reflections {
+    top: 230px;
+  }
+  .reflection-story p {
+    font-size: 16px;
+    line-height: 1.55;
+  }
+  .reflection-story .reflection-technologies {
+    display: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .painting-foreground {
+    transform: none !important;
+    opacity: 0.55 !important;
+    will-change: auto;
+  }
+  .water-ripples {
+    display: none;
+  }
+  .cat-guide {
+    translate: none;
+  }
+  .cat-guide-portrait {
+    transform: none !important;
+  }
+  .journey-content h1 {
+    animation: none;
+  }
+}
+.reflection-story {
+  animation: brush-reveal 0.45s ease-out;
+}
+.garden-notebook {
+  position: absolute;
+  right: 20%;
+  top: 50%;
+  transform: translateY(-48%) rotate(3deg);
+  width: 265px;
+  min-height: 320px;
+  padding: 30px;
+  border: 1px solid var(--garden-rule);
+  background: rgb(19 44 39 / 30%);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.garden-notebook::before {
+  content: "";
+  position: absolute;
+  top: 12px;
+  bottom: 12px;
+  left: 10px;
+  border-left: 1px solid var(--garden-rule);
+}
+.notebook-caption {
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+}
+.garden-notebook p {
+  font-family: var(--font-cormorant), Georgia, serif;
+  font-size: 30px;
+  line-height: 1.15;
+}
+.garden-notebook a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 10px;
+  min-height: 44px;
+}
+.painting-stage[data-chapter="3"] .journey-content {
+  width: 42%;
+}
+.painting-stage[data-chapter="3"] .journey-title {
+  font-size: clamp(54px, 5.6vw, 80px);
+}
+@media (max-width: 1000px) {
+  .garden-notebook {
+    width: 200px;
+    padding: 25px;
+    right: 24%;
+  }
+  .garden-notebook p {
+    font-size: 26px;
+  }
+}
+@media (max-width: 767px) {
+  .painting-stage[data-chapter="3"] .journey-content {
+    width: 84%;
+  }
+  .painting-stage[data-chapter="3"] .journey-title {
+    font-size: clamp(46px, 10.8vw, 72px);
+  }
+  .garden-notebook {
+    display: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .reflection-story {
+    animation: none;
+  }
+}
+@media (max-height: 760px) and (max-width: 767px) {
+  .journey-content {
+    top: 42%;
+  }
+  .journey-title {
+    font-size: 42px;
+  }
+  .journey-caption {
+    margin-bottom: 14px;
+  }
+  .journey-copy {
+    font-size: 16px;
+    line-height: 1.65;
+  }
+  .journey-action {
+    margin-top: 12px;
+    min-height: 38px;
+  }
+  .cat-guide {
+    width: 64px;
+    bottom: 145px;
+  }
+  .cat-guide-portrait {
+    height: 75px;
+  }
+  .cat-guide-invitation {
+    font-size: 8px;
+  }
+}
+
+.journey-header-center {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+@media (max-width: 1100px) {
+  .journey-header-center .journey-header-note {
+    display: none;
+  }
+}
+@media (max-width: 767px) {
+  .journey-header {
+    gap: 8px;
+  }
+  .journey-header .journey-wordmark {
+    font-size: 24px;
+  }
+  .journey-header-center {
+    margin-left: auto;
+    gap: 0;
+  }
+  .journey-header .garden-sound {
+    justify-content: center;
+    width: 44px;
+  }
+  .journey-header .garden-sound span {
+    display: none;
+  }
+  .journey-header .journey-connect {
+    justify-content: center;
+    min-width: 44px;
+    gap: 0;
+  }
+  .journey-header .journey-connect span {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+  }
+}
+
+.journey-content {
+  isolation: isolate;
+}
+
+.journey-title {
+  color: var(--garden-paper);
+  text-shadow: 0 2px 12px rgb(6 24 21 / 24%);
+}
+.journey-copy,
+.journey-action,
+.journey-socials {
+  text-shadow: 0 1px 4px rgb(6 24 21 / 35%);
+}
+.journey-caption {
+  font-size: 12px;
+  font-weight: 600;
+}
+.journey-technologies {
+  font-size: 13px;
+  line-height: 1.65;
+}
+.journey-index {
+  isolation: isolate;
+}
+
+.reflection-story {
+  position: relative;
+  isolation: isolate;
+}
+
+.reflection-story .reflection-technologies {
+  font-size: 13px;
+  line-height: 1.65;
+}
+.reflection-counter {
+  font-size: 12px;
+}
+.garden-notebook a {
+  font-size: 13px;
+}
+@media (max-width: 767px) {
+  .journey-caption {
+    font-size: 11px;
+  }
+  .journey-technologies {
+    font-size: 12px;
+  }
+  .journey-action {
+    font-size: 14px;
+  }
+  .journey-socials {
+    font-size: 14px;
+  }
+
+  .reflection-tabs {
+    min-height: 44px;
+  }
+  .reflection-tab {
+    min-height: 44px;
+  }
+  .painting-stage[data-chapter="1"] .journey-title,
+  .painting-stage[data-chapter="4"] .journey-title {
+    font-size: 42px;
+  }
+}
+@media (max-height: 760px) and (max-width: 767px) {
+  .painting-stage[data-chapter="2"] .journey-content {
+    top: 100px;
+  }
+  .painting-stage[data-chapter="2"] .journey-title {
+    font-size: 32px;
+  }
+  .painting-stage[data-chapter="1"] .journey-title,
+  .painting-stage[data-chapter="4"] .journey-title {
+    font-size: 36px;
+  }
+  .painting-stage[data-chapter="1"] .journey-content,
+  .painting-stage[data-chapter="4"] .journey-content {
+    top: 41%;
+  }
+  .journey-caption {
+    font-size: 10px;
+    margin-bottom: 10px;
+  }
+  .journey-technologies {
+    font-size: 11px;
+  }
+}

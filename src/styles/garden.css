@@ -8,6 +8,7 @@
   --journey-progress: 0;
   position: relative;
   height: 600svh;
+  overflow-anchor: none;
   background: var(--garden-ink);
   color: var(--garden-paper);
 }
@@ -16,7 +17,7 @@
   top: 0;
   height: 100svh;
   min-height: 600px;
-  overflow: hidden;
+  overflow: clip;
   isolation: isolate;
 }
 .painting-scenes,
@@ -108,8 +109,8 @@
   margin: 0 0 28px;
 }
 .journey-copy {
-  max-width: 340px;
-  font-size: 13px;
+  max-width: 420px;
+  font-size: 18px;
   line-height: 1.9;
   color: var(--garden-paper);
 }
@@ -121,7 +122,7 @@
   margin-top: 26px;
   padding-bottom: 5px;
   border-bottom: 1px solid var(--garden-rule);
-  font-size: 12px;
+  font-size: 15px;
   cursor: pointer;
   transition: border-color 0.2s;
 }
@@ -148,7 +149,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 24px;
-  font-size: 11px;
+  font-size: 14px;
   margin-top: 24px;
 }
 .journey-socials a {
@@ -174,7 +175,7 @@
   align-items: center;
   justify-content: flex-end;
   gap: 14px;
-  font-size: 11px;
+  font-size: 14px;
 }
 .journey-index-line {
   width: 16px;
@@ -187,7 +188,7 @@
   background: var(--garden-paper);
 }
 .journey-index-label {
-  width: 96px;
+  width: 115px;
 }
 .journey-footer {
   position: absolute;
@@ -224,14 +225,6 @@
   width: 44px;
   height: 44px;
   cursor: pointer;
-}
-.journey-cat {
-  position: absolute;
-  right: 8%;
-  bottom: 112px;
-  width: 60px;
-  opacity: 0.85;
-  pointer-events: none;
 }
 .journey-progress {
   position: absolute;
@@ -314,8 +307,8 @@
     font-size: 9px;
   }
   .journey-copy {
-    font-size: 12px;
-    max-width: 300px;
+    font-size: 16px;
+    max-width: 340px;
   }
   .journey-action {
     margin-top: 18px;
@@ -357,11 +350,6 @@
     font-size: 12px;
     max-width: 130px;
     text-align: center;
-  }
-  .journey-cat {
-    bottom: 155px;
-    right: 8%;
-    width: 42px;
   }
   .journey-progress {
     left: 10px;

@@ -22,15 +22,6 @@
   --ring: #43695d;
   --radius: 0.25rem;
   --ink-soft: #698273;
-  --cat-fur: #a0a9a5;
-  --cat-fur-light: #d1d6cf;
-  --cat-stripe: #66776c;
-  --cat-muzzle: #eeeee2;
-  --cat-eye: #c5a052;
-  --cat-pupil: #273a33;
-  --cat-nose: #ae8e87;
-  --pearl: #faf6e7;
-  --cat-charm: #a4bcb0;
 }
 @theme inline {
   --color-background: var(--background);
@@ -100,11 +91,6 @@
   }
   .text-link {
     @apply inline-flex min-h-11 items-center gap-3 text-sm font-medium underline-offset-8 hover:underline;
-  }
-  .cat-art {
-    --fur: var(--cat-fur);
-    --light-fur: var(--cat-fur-light);
-    --stripe: var(--cat-stripe);
   }
 }
 @media (prefers-reduced-motion: reduce) {

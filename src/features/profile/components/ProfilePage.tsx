@@ -11,11 +11,11 @@ export function ProfilePage() {
       </Link>
       <div className="flex items-center gap-6">
         <Image
-          src="/lia.jpeg"
+          src="/images/riska-portrait.webp"
           alt="Riska Amelia"
-          width={80}
-          height={100}
-          className="border border-border object-cover"
+          width={160}
+          height={200}
+          className="h-30 w-24 shrink-0 border border-border object-cover md:h-50 md:w-40"
         />
         <div>
           <h1 className="section-heading">Riska Amelia.</h1>

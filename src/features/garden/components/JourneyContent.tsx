@@ -33,7 +33,7 @@ export function JourneyContent({
         <>
           <div className="journey-bio">
             <Image
-              src="/lia.jpeg"
+              src="/images/riska-portrait.webp"
               alt="Riska Amelia"
               width={64}
               height={80}

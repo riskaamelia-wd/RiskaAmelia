@@ -12,11 +12,20 @@ import {
   getChapterIndex,
   getChapterScrollTop,
 } from "../utils/chapter-progress";
-import { CatArtwork } from "@/components/common/CatArtwork";
+import { CatGuide } from "./CatGuide";
+import { ProjectReflections } from "./ProjectReflections";
+import { WaterRipples } from "./WaterRipples";
+import { GardenNotebook } from "./GardenNotebook";
+import type { Project } from "@/features/projects/types/project";
 import { SITE } from "@/config/site";
 import "@/styles/garden.css";
+import "@/styles/garden-experience.css";
 gsap.registerPlugin(useGSAP, ScrollTrigger);
-export function PaintingJourney() {
+export function PaintingJourney({
+  projects,
+}: {
+  projects: readonly Project[];
+}) {
   const scope = useRef<HTMLElement>(null);
   const [active, setActive] = useState(0);
   useGSAP(
@@ -69,7 +78,14 @@ export function PaintingJourney() {
             { opacity: 1, duration: 0.6 },
             3.5,
           )
-          .to('[data-scene="lilies"]', { scale: 1.18, duration: 1.5 }, 3.5);
+          .to('[data-scene="lilies"]', { scale: 1.18, duration: 1.5 }, 3.5)
+          .fromTo(
+            "[data-foreground]",
+            { scale: 1.05, xPercent: 0, yPercent: 0 },
+            { scale: 1.8, xPercent: 18, yPercent: -18, duration: 2.3 },
+            0,
+          )
+          .to("[data-foreground]", { opacity: 0, duration: 0.5 }, 1.7);
       });
       return () => media.revert();
     },
@@ -108,7 +124,7 @@ export function PaintingJourney() {
           aria-hidden="true"
         />
       ))}
-      <div className="painting-stage">
+      <div className="painting-stage" data-chapter={active}>
         <PaintingScenes active={active} />
         <div className="journey-frame" aria-hidden="true" />
         <JourneyNavigation active={active} navigate={navigate} />
@@ -116,9 +132,10 @@ export function PaintingJourney() {
           active={active}
           next={() => navigate(Math.min(4, active + 1))}
         />
-        <div className="journey-cat cat-art" aria-hidden="true">
-          <CatArtwork />
-        </div>
+        {active === 2 ? <ProjectReflections projects={projects} /> : null}
+        {active === 3 ? <GardenNotebook /> : null}
+        <CatGuide active={active} navigate={navigate} />
+        <WaterRipples />
         <div className="journey-progress" aria-hidden="true" />
       </div>
       <noscript>

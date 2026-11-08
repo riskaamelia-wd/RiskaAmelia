@@ -38,7 +38,17 @@ export function PaintingScenes({ active }: { active: number }) {
           />
         </div>
       ))}
+      <div data-foreground className="painting-foreground">
+        <Image
+          src="/images/willow-foreground.webp"
+          alt=""
+          fill
+          sizes="100vw"
+          className="object-cover"
+        />
+      </div>
       <div className="painting-shade" />
+      <div className="pond-light" />
     </div>
   );
 }
