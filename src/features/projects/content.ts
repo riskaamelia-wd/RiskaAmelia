@@ -12,8 +12,8 @@ export const PROJECTS: readonly Project[] = [
       "A village website bringing public-service information, community activities, news, and local tourism together.",
     liveUrl: "https://pringwulung.id/",
     artwork: {
-      src: "/images/garden-path.webp",
-      alt: "An impressionist garden path, illustrating Pringwulung.",
+      src: "/images/pringwulung.jpeg",
+      alt: "An impressionist aerial view of Pringwulung’s colorful courtyard and village lane, based on the project reference.",
     },
     technologies: [],
     sections: [
@@ -33,7 +33,7 @@ export const PROJECTS: readonly Project[] = [
     summary:
       "KPU Open Data CMS: user and role management, DataHub-connected datasets, provincial homepage content, and publication approvals.",
     artwork: {
-      src: "/images/water-lily-pond.webp",
+      src: "/images/cms-opendata.png",
       alt: "An impressionist water-lily pond, illustrating CMS OPENDATA.",
     },
     technologies: ["Next.js", "TypeScript", "DataHub", "Kong"],
@@ -64,7 +64,7 @@ export const PROJECTS: readonly Project[] = [
     slug: "simdiklat",
     liveUrl: "https://simdiklat-bpsdm.jakarta.go.id/next",
     artwork: {
-      src: "/images/water-lily-pond.webp",
+      src: "/images/simdiklat.png",
       alt: "A painted study of blue-green water and water lilies, illustrating SIMDIKLAT.",
     },
     title: "SIMDIKLAT",
@@ -93,7 +93,7 @@ export const PROJECTS: readonly Project[] = [
     liveUrl:
       "https://simdiklat-bpsdm.jakarta.go.id/sim-diklat/auth/login/simfoni",
     artwork: {
-      src: "/images/garden-bridge.webp",
+      src: "/images/simfoni.png",
       alt: "An impressionist garden bridge, illustrating SIMFONI.",
     },
     title: "SIMFONI",
@@ -117,7 +117,7 @@ export const PROJECTS: readonly Project[] = [
     slug: "musrenbangkom",
     liveUrl: "https://simdiklat-bpsdm.jakarta.go.id/musren-bangkom/",
     artwork: {
-      src: "/images/lilies-close.webp",
+      src: "/images/musrenbangkom.png",
       alt: "A painted close study of water lilies, illustrating MUSRENBANGKOM.",
     },
     title: "MUSRENBANGKOM",
@@ -136,7 +136,7 @@ export const PROJECTS: readonly Project[] = [
   {
     slug: "classy",
     artwork: {
-      src: "/images/flower-study.webp",
+      src: "/images/classy.png",
       alt: "An impressionist flower garden, illustrating Classy.",
     },
     title: "Classy",
@@ -153,7 +153,7 @@ export const PROJECTS: readonly Project[] = [
   {
     slug: "gofit",
     artwork: {
-      src: "/images/garden-path.webp",
+      src: "/images/gofit.png",
       alt: "An impressionist sunlit garden path, illustrating GoFit.",
     },
     title: "GoFit",
