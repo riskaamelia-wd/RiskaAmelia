@@ -34,7 +34,7 @@ for (const width of [360, 768, 1440]) {
           nodes.map((node) => node.getAttribute("src")),
         ),
       ).size,
-    ).toBe(5);
+    ).toBe(7);
     if (width >= 768)
       await expect(page.getByRole("navigation")).toHaveCSS("position", "fixed");
     expect(
@@ -72,7 +72,7 @@ test("a failed decorative cover keeps the project label and link available", asy
   page,
 }) => {
   await page.route("**/_next/image?*", (route) =>
-    route.request().url().includes("flower-study")
+    route.request().url().includes("classy.png")
       ? route.abort()
       : route.continue(),
   );

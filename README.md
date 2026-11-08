@@ -4,6 +4,8 @@ An immersive personal portfolio: native scrolling carries visitors through three
 
 ## Local development
 
+Use Node.js 26.x (see `.nvmrc`) and Bun 1.2.19. Bun remains the package manager; Node runs Next.js build/server processes.
+
 ```sh
 bun install --frozen-lockfile
 bun run dev
@@ -45,3 +47,19 @@ Self-hosted Manrope and Cormorant Garamond font licenses are retained in `public
 Copy `.env.example` to `.env.local` and set Sentry DSNs to enable the configured browser/server reporting. Reporting stays inactive without a DSN; automatic user, cookies, body and header collection is disabled.
 
 The legacy Hasura credential was removed from active source; its owner still needs to revoke/rotate it. No Git history rewriting, staging, commits, pushes or deployment was performed.
+
+## Vercel deployment
+
+The repository pins `engines.node` to `26.x` and supplies the Next.js preset, Bun installation and build commands in `vercel.json`. This overrides the retired Node.js 18 setting for new deployments.
+
+In Vercel → Project → Settings → Build and Deployment:
+
+- Set Node.js Version to **26.x** to keep the dashboard aligned with the repository.
+- Use the repository root as Root Directory and **Next.js** as the framework.
+- Install: `bun install --frozen-lockfile`; build: `bun run build`; output: `.next`.
+- Remove any old Vite build overrides (`vite build` or `dist`).
+- Sentry DSNs are optional; no API credentials are required to build the portfolio.
+
+Commit/push these changes manually, then create a new deployment from that commit. Redeploying an older commit will keep its old configuration. No deployment is triggered by the local checks.
+
+Node version reference: https://vercel.com/changelog/node-js-26-lts-is-now-generally-available-on-vercel
