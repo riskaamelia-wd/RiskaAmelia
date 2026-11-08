@@ -1,0 +1,155 @@
+.project-gallery-note {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  border-top: 1px solid var(--garden-rule);
+  padding-top: 20px;
+  margin: 48px 0 42px;
+}
+.painting-page .painting-page-main .project-gallery-note {
+  font-size: 13px;
+}
+.project-gallery {
+  --gallery-frame: #9c8c62;
+  --gallery-frame-light: #cfbf96;
+  --gallery-mat: #e5dfce;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 64px;
+  list-style: none;
+  padding: 0;
+}
+.project-painting-link {
+  display: block;
+  text-decoration: none;
+}
+.project-painting-frame {
+  background: var(--gallery-frame);
+  padding: 9px;
+  border: 1px solid var(--gallery-frame-light);
+  box-shadow:
+    inset 0 0 0 3px rgb(19 44 39 / 36%),
+    0 14px 28px rgb(6 24 21 / 28%);
+  transition:
+    transform 0.5s ease,
+    box-shadow 0.5s ease;
+}
+.project-painting-mat {
+  background: var(--gallery-mat);
+  padding: 10px;
+}
+.project-painting-canvas {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--garden-ink);
+}
+.project-painted-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1s ease;
+}
+.project-unpainted {
+  display: grid;
+  height: 100%;
+  place-items: center;
+  font-family: var(--font-cormorant), Georgia, serif;
+  font-size: 28px;
+}
+.project-painting-caption {
+  padding: 22px 2px 0;
+}
+.project-painting-kind {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+.painting-page .project-painting-caption h2 {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin: 10px 0 12px;
+  font-family: var(--font-cormorant), Georgia, serif;
+  font-size: clamp(28px, 2.5vw, 36px);
+  font-weight: 400;
+  line-height: 1.1;
+  overflow-wrap: anywhere;
+}
+.project-painting-caption h2 svg {
+  flex-shrink: 0;
+  margin-top: 8px;
+  transition: transform 0.3s;
+}
+.painting-page .painting-page-main .project-painting-summary {
+  font-size: 16px;
+  line-height: 1.75;
+}
+.painting-page .painting-page-main .project-painting-medium {
+  margin-top: 12px;
+  font-size: 12px;
+  line-height: 1.8;
+}
+.project-painting-open {
+  display: inline-flex;
+  align-items: center;
+  gap: 20px;
+  margin-top: 17px;
+  min-height: 36px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--garden-rule);
+  font-size: 13px;
+}
+.project-painting-link:hover .project-painting-frame,
+.project-painting-link:focus-visible .project-painting-frame {
+  transform: translateY(-5px);
+  box-shadow:
+    inset 0 0 0 3px rgb(19 44 39 / 36%),
+    0 20px 36px rgb(6 24 21 / 38%);
+}
+.project-painting-link:hover .project-painted-image {
+  transform: scale(1.035);
+}
+.project-painting-link:hover h2 svg {
+  transform: translate(3px, -3px);
+}
+@media (min-width: 1100px) {
+  .project-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 48px;
+    row-gap: 56px;
+  }
+  .project-gallery > li:nth-child(even) {
+    padding-top: 62px;
+  }
+}
+@media (max-width: 767px) {
+  .project-gallery-note {
+    margin: 32px 0;
+  }
+  .project-gallery {
+    gap: 48px;
+  }
+  .project-painting-frame {
+    padding: 7px;
+  }
+  .project-painting-mat {
+    padding: 7px;
+  }
+  .project-painting-caption {
+    padding-top: 18px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .project-painting-frame,
+  .project-painted-image,
+  .project-painting-caption h2 svg {
+    transition: none;
+    transform: none !important;
+  }
+}
