@@ -61,9 +61,9 @@ test("verified projects have real detail routes and source attribution", async (
   await expect(
     page.getByRole("link", { name: "Source: LinkedIn" }),
   ).toBeVisible();
-  await expect(page.getByRole("link", { name: "Visit website" })).toHaveCount(
-    0,
-  );
+  await expect(
+    page.getByRole("link", { name: "Visit website" }),
+  ).toHaveAttribute("href", "https://simdiklat-bpsdm.jakarta.go.id/next");
 });
 
 for (const width of [360, 1440]) {

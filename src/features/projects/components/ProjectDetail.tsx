@@ -12,6 +12,19 @@ export function ProjectDetail({ slug }: { slug: string }) {
       <Link href="/projects" className="text-link mb-10">
         <ArrowLeft className="size-4" aria-hidden="true" /> All projects
       </Link>
+      {project.artwork ? (
+        <figure className="project-detail-artwork">
+          <div style={{ viewTransitionName: `project-cover-${project.slug}` }}>
+            <ContentImage
+              src={project.artwork.src}
+              alt={project.artwork.alt}
+              fill
+              sizes="(max-width: 767px) 100px, 220px"
+            />
+          </div>
+          <figcaption>Painted cover study</figcaption>
+        </figure>
+      ) : null}
       <h1 className="section-heading">{project.title}</h1>
       <p className="mt-6 max-w-2xl text-lg leading-8 text-muted-foreground">
         {project.summary}

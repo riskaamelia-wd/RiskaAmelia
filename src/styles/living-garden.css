@@ -1,0 +1,240 @@
+.painting-presence {
+  position: absolute;
+  inset: -12px;
+  z-index: -2;
+  pointer-events: none;
+}
+.painting-presence .painting-scenes {
+  z-index: auto;
+}
+.living-exhibition {
+  width: min(380px, 32vw);
+  right: 21%;
+  transform: translateY(-48%);
+}
+.living-exhibition .reflection-tabs {
+  justify-content: flex-start;
+  align-items: center;
+  gap: 7px;
+  overflow-x: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: var(--garden-faint) transparent;
+  padding: 5px 3px 10px;
+  margin-bottom: 12px;
+}
+.living-exhibition .reflection-tab {
+  flex: 0 0 44px;
+  height: 44px;
+  min-width: 44px;
+  padding: 3px;
+  border: 1px solid var(--garden-rule);
+  opacity: 0.65;
+  transition:
+    opacity 180ms,
+    border-color 180ms;
+}
+.living-exhibition .reflection-tab img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.living-exhibition .reflection-tab[aria-pressed="true"],
+.living-exhibition .reflection-tab:hover {
+  opacity: 1;
+  border-color: var(--garden-paper);
+}
+.reflection-artwork {
+  position: relative;
+  display: block;
+  height: clamp(135px, 21vh, 210px);
+  border: 6px solid var(--garden-faint);
+  outline: 1px solid var(--garden-rule);
+  outline-offset: 4px;
+  overflow: hidden;
+  box-shadow: 0 12px 25px rgb(9 31 28 / 22%);
+}
+.reflection-artwork img {
+  object-fit: cover;
+}
+.reflection-artwork-invitation {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 10px 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  background: var(--garden-ink);
+  color: var(--garden-paper);
+  opacity: 0;
+  transition: opacity 180ms;
+}
+.reflection-artwork:hover .reflection-artwork-invitation,
+.reflection-artwork:focus-visible .reflection-artwork-invitation {
+  opacity: 1;
+}
+.living-exhibition .reflection-story {
+  border: 0;
+  padding-top: 12px;
+  animation: none;
+}
+.reflection-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.reflection-controls > div {
+  display: flex;
+  gap: 6px;
+}
+.reflection-controls button {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  cursor: pointer;
+  border: 1px solid var(--garden-rule);
+  border-radius: 50%;
+}
+.reflection-controls button:hover {
+  background: var(--garden-ink);
+}
+.living-exhibition .reflection-story h2 {
+  margin-top: 2px;
+  font-size: clamp(28px, 2.8vw, 38px);
+  overflow-wrap: anywhere;
+}
+.painting-stage[data-chapter="2"] .journey-content {
+  width: 33%;
+}
+@media (min-width: 768px) and (max-height: 760px) {
+  .reflection-artwork {
+    height: 130px;
+  }
+  .living-exhibition .reflection-story p {
+    line-height: 1.55;
+  }
+  .living-exhibition .reflection-story .journey-action {
+    margin-top: 12px;
+  }
+}
+@media (max-width: 767px) {
+  .painting-stage[data-chapter="2"] .journey-content {
+    width: 84%;
+  }
+  .living-exhibition {
+    width: 84%;
+    right: 8%;
+    transform: none;
+    top: 300px;
+  }
+  .living-exhibition .reflection-tabs {
+    margin-bottom: 8px;
+  }
+  .reflection-artwork {
+    float: right;
+    width: 90px;
+    height: 110px;
+    margin: 18px 5px 12px 16px;
+    border-width: 3px;
+  }
+  .reflection-artwork-invitation {
+    display: none;
+  }
+  .living-exhibition .reflection-story {
+    padding-top: 0;
+  }
+  .living-exhibition .reflection-story h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+  .living-exhibition .reflection-story p {
+    font-size: 16px;
+    line-height: 1.55;
+  }
+  .living-exhibition .reflection-story .reflection-technologies {
+    font-size: 11px;
+    clear: both;
+  }
+  .living-exhibition .reflection-story .journey-action {
+    margin-top: 12px;
+  }
+  .reflection-controls {
+    min-height: 44px;
+  }
+  .reflection-controls > div {
+    gap: 4px;
+  }
+  .reflection-controls button {
+    width: 40px;
+  }
+}
+@media (max-width: 767px) and (max-height: 760px) {
+  .living-exhibition {
+    top: 205px;
+  }
+  .living-exhibition .reflection-story > p:not(.reflection-technologies) {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .living-exhibition .reflection-story h2 {
+    font-size: 26px;
+    margin-bottom: 6px;
+  }
+  .living-exhibition .reflection-story .journey-action {
+    min-height: 40px;
+    margin-top: 8px;
+    clear: both;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .painting-presence {
+    transform: none !important;
+    clip-path: none !important;
+  }
+  .living-exhibition img {
+    transform: none !important;
+  }
+}
+
+/* Give the exhibition breathing room before a third column can fit. */
+@media (min-width: 768px) and (max-width: 1100px) {
+  .living-exhibition {
+    right: 8%;
+    width: 42%;
+  }
+  .painting-stage[data-chapter="2"] .journey-content {
+    width: 36%;
+  }
+  .painting-stage .journey-index {
+    top: auto;
+    bottom: 95px;
+    left: 8%;
+    right: 8%;
+    transform: none;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .painting-stage .journey-index-item {
+    flex: 1;
+    justify-content: center;
+  }
+  .painting-stage .journey-index-label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+  }
+  .painting-stage .journey-index-line {
+    width: 70%;
+  }
+  .painting-stage .journey-index-item[aria-current] .journey-index-line {
+    width: 95%;
+  }
+}

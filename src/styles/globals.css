@@ -104,3 +104,16 @@
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Native same-origin document transitions; ordinary navigation is the fallback. */
+@view-transition {
+  navigation: auto;
+}
+::view-transition-group(*) {
+  animation-duration: 450ms;
+}
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(*) {
+    animation-duration: 0s !important;
+  }
+}

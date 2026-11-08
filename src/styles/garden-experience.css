@@ -318,9 +318,6 @@
   .reflection-waterline {
     display: none;
   }
-  .painting-stage[data-chapter="2"] .cat-guide {
-    display: none;
-  }
 }
 @media (max-height: 760px) and (max-width: 767px) {
   .painting-stage[data-chapter="2"] .journey-content {

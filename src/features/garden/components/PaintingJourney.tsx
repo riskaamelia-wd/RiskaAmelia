@@ -4,6 +4,11 @@ import { useRef, useState } from "react";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useChapterHash } from "../hooks/useChapterHash";
+import { useGardenPresence } from "../hooks/useGardenPresence";
+import { GardenTableaux } from "./GardenTableaux";
+import { PaintedPigments } from "./PaintedPigments";
+import { useChapterChoreography } from "../hooks/useChapterChoreography";
 import { PaintingScenes } from "./PaintingScenes";
 import { JourneyContent } from "./JourneyContent";
 import { JourneyNavigation } from "./JourneyNavigation";
@@ -20,6 +25,9 @@ import type { Project } from "@/features/projects/types/project";
 import { SITE } from "@/config/site";
 import "@/styles/garden.css";
 import "@/styles/garden-experience.css";
+import "@/styles/living-garden.css";
+import "@/styles/painted-scroll.css";
+import "@/styles/cat-guide.css";
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 export function PaintingJourney({
   projects,
@@ -28,6 +36,9 @@ export function PaintingJourney({
 }) {
   const scope = useRef<HTMLElement>(null);
   const [active, setActive] = useState(0);
+  useChapterHash(scope);
+  useGardenPresence(scope, active);
+  useChapterChoreography(scope, active);
   useGSAP(
     () => {
       const media = gsap.matchMedia();
@@ -125,7 +136,11 @@ export function PaintingJourney({
         />
       ))}
       <div className="painting-stage" data-chapter={active}>
-        <PaintingScenes active={active} />
+        <div className="painting-presence">
+          <PaintingScenes active={active} />
+        </div>
+        <GardenTableaux active={active} />
+        <PaintedPigments journey={scope} />
         <div className="journey-frame" aria-hidden="true" />
         <JourneyNavigation active={active} navigate={navigate} />
         <JourneyContent

@@ -41,7 +41,7 @@ test("touching open water creates a bounded ripple pool and respects reduced mot
 }) => {
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto("/");
-  await page.mouse.click(1000, 600);
+  await page.mouse.click(600, 740);
   await expect
     .poll(async () =>
       Number(

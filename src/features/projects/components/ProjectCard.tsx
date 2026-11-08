@@ -1,15 +1,17 @@
 import { ContentImage } from "@/components/common/ContentImage";
-import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import type { Project } from "../types/project";
 export function ProjectCard({ project }: { project: Project }) {
   const visual = project.artwork ?? project.image;
   return (
-    <Link href={`/projects/${project.slug}`} className="project-painting-link">
+    <a href={`/projects/${project.slug}`} className="project-painting-link">
       <figure>
         <div className="project-painting-frame">
           <div className="project-painting-mat">
-            <div className="project-painting-canvas">
+            <div
+              className="project-painting-canvas"
+              style={{ viewTransitionName: `project-cover-${project.slug}` }}
+            >
               {visual ? (
                 <ContentImage
                   src={visual.src}
@@ -43,6 +45,6 @@ export function ProjectCard({ project }: { project: Project }) {
           </span>
         </figcaption>
       </figure>
-    </Link>
+    </a>
   );
 }
