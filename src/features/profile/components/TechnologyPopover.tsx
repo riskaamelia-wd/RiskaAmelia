@@ -93,6 +93,13 @@ export function TechnologyPopover({
         onPointerEnter={cancelClose}
         onPointerLeave={closeSoon}
         onOpenAutoFocus={(event) => event.preventDefault()}
+        onKeyDown={(event) => {
+          if (event.key !== "Escape") return;
+          event.preventDefault();
+          event.stopPropagation();
+          restoreFocus.current = true;
+          onOpenChange(false);
+        }}
         onEscapeKeyDown={() => {
           restoreFocus.current = true;
         }}

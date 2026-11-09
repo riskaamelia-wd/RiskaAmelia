@@ -1,5 +1,4 @@
 import { useEffect, type RefObject } from "react";
-const CONTENT_GAP = 12;
 // Clip to the fixed painting frame while preserving native document scrolling.
 export function usePaintingFrame(
   scope: RefObject<HTMLDivElement | null>,
@@ -21,22 +20,11 @@ export function usePaintingFrame(
       // Measure all surfaces first, then write; no layout reads after a style mutation.
       const clips = surfaces.map((surface) => {
         const rect = surface.getBoundingClientRect();
-        const top = Math.min(
-          rect.height,
-          Math.max(0, boundary.top + CONTENT_GAP - rect.top),
-        );
-        const bottom = Math.min(
-          rect.height - top,
-          Math.max(0, rect.bottom - boundary.bottom + CONTENT_GAP),
-        );
-        const left = Math.min(
-          rect.width,
-          Math.max(0, boundary.left + CONTENT_GAP - rect.left),
-        );
-        const right = Math.min(
-          rect.width - left,
-          Math.max(0, rect.right - boundary.right + CONTENT_GAP),
-        );
+        // Negative insets preserve focus rings and children beyond the surface's own box.
+        const top = boundary.top - rect.top;
+        const bottom = rect.bottom - boundary.bottom;
+        const left = boundary.left - rect.left;
+        const right = rect.right - boundary.right;
         return `inset(${top}px ${right}px ${bottom}px ${left}px)`;
       });
       surfaces.forEach((surface, index) => {

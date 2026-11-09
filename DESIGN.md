@@ -93,3 +93,9 @@ Publication date is 2026-11-09. The supplied manuscript was lightly reviewed: th
 The second bilingual note preserves the owner's complete English and Indonesian manuscripts, with English as the initial language. Markdown body headings are normalized below the article title and broken emphasis markers are repaired without rewriting the conversational voice. Twelve lessons remain in each language. The reusable reader now selects a translation bundle by slug; the queue diagram belongs only to BullMQ through an explicit article content option. Book notes never inherit technical diagrams.
 
 An original impressionist reading scene (open book, empty chair, blue-green pond) supplies the new cover; it is not a reproduction of the published book jacket. Its exact imagegen prompt is recorded in `docs/naval-almanack-cover.md`. The note is listed first and the homepage notebook points to the latest article with topic-neutral copy.
+
+## Frame-safe content on every page
+
+The fixed frame is a real visual boundary for interface text. Homepage interface elements share an inset clipping layer, while the painting remains full viewport. Collection, profile, project/article detail, not-found and error pages share frame-aware clipping for header, navigation, main content and footer. The clip rectangle follows the fixed frame exactly along the frame line with no extra inset, using negative insets where needed so ordinary focus rings and child overflow are preserved inside that boundary.
+
+Document scrolling remains native; content is neither deleted nor moved into a nested scrolling panel. A coalesced requestAnimationFrame update handles scroll, resize and content-size changes such as language selection. Layout reads are batched before style writes, and listeners/observers clean up on route changes. Keyboard and anchor scrolling retain safe padding. Without JavaScript the full document remains readable with its normal flow.

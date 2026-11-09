@@ -139,17 +139,19 @@ export function PaintingJourney({
         <div className="painting-presence">
           <PaintingScenes active={active} />
         </div>
-        <GardenTableaux active={active} />
-        <PaintedPigments journey={scope} />
         <div className="journey-frame" aria-hidden="true" />
-        <JourneyNavigation active={active} navigate={navigate} />
-        <JourneyContent
-          active={active}
-          next={() => navigate(Math.min(4, active + 1))}
-        />
-        {active === 2 ? <ProjectReflections projects={projects} /> : null}
-        {active === 3 ? <GardenNotebook /> : null}
-        <CatGuide active={active} navigate={navigate} />
+        <div className="journey-interface">
+          <GardenTableaux active={active} />
+          <PaintedPigments journey={scope} />
+          <JourneyNavigation active={active} navigate={navigate} />
+          <JourneyContent
+            active={active}
+            next={() => navigate(Math.min(4, active + 1))}
+          />
+          {active === 2 ? <ProjectReflections projects={projects} /> : null}
+          {active === 3 ? <GardenNotebook /> : null}
+          <CatGuide active={active} navigate={navigate} />
+        </div>
         <WaterRipples />
         <div className="journey-progress" aria-hidden="true" />
       </div>

@@ -6,56 +6,6 @@ import { SITE } from "@/config/site";
 // Gallery paintings are illustrative covers, not software screenshots.
 export const PROJECTS: readonly Project[] = [
   {
-    slug: "pringwulung",
-    title: "Pringwulung",
-    summary:
-      "A village website bringing public-service information, community activities, news, and local tourism together.",
-    liveUrl: "https://pringwulung.id/",
-    artwork: {
-      src: "/images/pringwulung.jpeg",
-      alt: "An impressionist aerial view of Pringwulung’s colorful courtyard and village lane, based on the project reference.",
-    },
-    technologies: [],
-    sections: [
-      {
-        heading: "A digital home for the village",
-        body: "I built Pringwulung, a village website that brings public-service information and community updates into one place. Its public navigation connects village information, resident services, community groups, and local activities.",
-      },
-      {
-        heading: "Public services and community information",
-        body: "The homepage provides entry points for online administrative letters, resident complaints, emergency information, and service schedules. News, agendas, tourism, and cultural information sit alongside these service links.",
-      },
-    ],
-  },
-  {
-    slug: "lumiere-kebaya",
-    title: "Lumière Kebaya",
-    summary:
-      "A kebaya rental website with a collection catalog, a step-by-step rental guide, and booking through WhatsApp.",
-    liveUrl: "https://lumiere-kebaya.vercel.app/",
-    image: {
-      src: "/images/lumiere.png",
-      alt: "Lumière Kebaya homepage with burgundy and gold styling and an embroidered kebaya preview.",
-      width: 2880,
-      height: 1558,
-    },
-    technologies: [],
-    sections: [
-      {
-        heading: "A digital showcase for kebaya rentals",
-        body: "Lumière Kebaya presents a rental collection for graduations, engagements, receptions, and other special occasions. Its homepage brings the collection, rental guidance, and contact options together in a burgundy-and-gold visual identity.",
-      },
-      {
-        heading: "Exploring the collection",
-        body: "The featured catalog uses large product photographs and occasion labels to introduce the kebaya collection. Visitors can browse the available styles and continue to a rental inquiry through WhatsApp.",
-      },
-      {
-        heading: "From discovery to a rental inquiry",
-        body: "A five-step guide explains choosing a collection, consulting about size and availability, confirming payment, arranging delivery or pickup, and returning the kebaya. WhatsApp links give visitors a direct way to discuss fitting, dates, and rental details.",
-      },
-    ],
-  },
-  {
     slug: "cms-opendata",
     title: "CMS OPENDATA",
     summary:
@@ -161,6 +111,57 @@ export const PROJECTS: readonly Project[] = [
       },
     ],
   },
+  {
+    slug: "pringwulung",
+    title: "Pringwulung",
+    summary:
+      "A village website bringing public-service information, community activities, news, and local tourism together.",
+    liveUrl: "https://pringwulung.id/",
+    artwork: {
+      src: "/images/pringwulung.jpeg",
+      alt: "An impressionist aerial view of Pringwulung’s colorful courtyard and village lane, based on the project reference.",
+    },
+    technologies: [],
+    sections: [
+      {
+        heading: "A digital home for the village",
+        body: "I built Pringwulung, a village website that brings public-service information and community updates into one place. Its public navigation connects village information, resident services, community groups, and local activities.",
+      },
+      {
+        heading: "Public services and community information",
+        body: "The homepage provides entry points for online administrative letters, resident complaints, emergency information, and service schedules. News, agendas, tourism, and cultural information sit alongside these service links.",
+      },
+    ],
+  },
+  {
+    slug: "lumiere-kebaya",
+    title: "Lumière Kebaya",
+    summary:
+      "A kebaya rental website with a collection catalog, a step-by-step rental guide, and booking through WhatsApp.",
+    liveUrl: "https://lumiere-kebaya.vercel.app/",
+    image: {
+      src: "/images/lumiere.png",
+      alt: "Lumière Kebaya homepage with burgundy and gold styling and an embroidered kebaya preview.",
+      width: 2880,
+      height: 1558,
+    },
+    technologies: [],
+    sections: [
+      {
+        heading: "A digital showcase for kebaya rentals",
+        body: "Lumière Kebaya presents a rental collection for graduations, engagements, receptions, and other special occasions. Its homepage brings the collection, rental guidance, and contact options together in a burgundy-and-gold visual identity.",
+      },
+      {
+        heading: "Exploring the collection",
+        body: "The featured catalog uses large product photographs and occasion labels to introduce the kebaya collection. Visitors can browse the available styles and continue to a rental inquiry through WhatsApp.",
+      },
+      {
+        heading: "From discovery to a rental inquiry",
+        body: "A five-step guide explains choosing a collection, consulting about size and availability, confirming payment, arranging delivery or pickup, and returning the kebaya. WhatsApp links give visitors a direct way to discuss fitting, dates, and rental details.",
+      },
+    ],
+  },
+
   {
     slug: "classy",
     artwork: {

@@ -367,3 +367,20 @@
     opacity: 1 !important;
   }
 }
+
+/* The artwork fills the viewport; only its interface stays inside the frame. */
+.journey-interface {
+  position: absolute;
+  inset: 0;
+  clip-path: inset(18px);
+  pointer-events: none;
+}
+.journey-interface a,
+.journey-interface button {
+  pointer-events: auto;
+}
+@media (max-width: 767px) {
+  .journey-interface {
+    clip-path: inset(10px);
+  }
+}
