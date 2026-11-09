@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { createContext, useContext, useRef } from "react";
 import { usePaintingPageMotion } from "@/hooks/usePaintingPageMotion";
+import { usePaintingFrame } from "@/hooks/usePaintingFrame";
 import { usePathname } from "next/navigation";
 import { ArrowLeft, ArrowUpRight, ArrowUp } from "lucide-react";
 import { PaintedCat } from "@/components/common/PaintedCat";
@@ -29,6 +30,7 @@ function PaintingPageSurface({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const scope = useRef<HTMLDivElement>(null);
   usePaintingPageMotion(scope, pathname);
+  usePaintingFrame(scope, pathname);
   const writing = pathname.startsWith("/writing");
   const about = pathname.startsWith("/about");
   const chapter = writing ? "writing" : about ? "about" : "projects";

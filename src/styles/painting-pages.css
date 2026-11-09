@@ -398,3 +398,13 @@
     transform: none;
   }
 }
+
+/* Keep focused controls and section anchors inside the painting's safe area. */
+html:has(.painting-page) {
+  scroll-padding-block: 32px;
+}
+@media (max-width: 767px) {
+  html:has(.painting-page) {
+    scroll-padding-block: 24px;
+  }
+}
