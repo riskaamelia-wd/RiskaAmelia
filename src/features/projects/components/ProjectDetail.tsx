@@ -7,22 +7,25 @@ import { Badge } from "@/components/ui/badge";
 export function ProjectDetail({ slug }: { slug: string }) {
   const project = getProject(slug);
   if (!project) notFound();
+  const cover = project.artwork ?? project.image;
   return (
     <article className="page-shell py-16">
       <Link href="/projects" className="text-link mb-10">
         <ArrowLeft className="size-4" aria-hidden="true" /> All projects
       </Link>
-      {project.artwork ? (
+      {cover ? (
         <figure className="project-detail-artwork">
           <div style={{ viewTransitionName: `project-cover-${project.slug}` }}>
             <ContentImage
-              src={project.artwork.src}
-              alt={project.artwork.alt}
+              src={cover.src}
+              alt={cover.alt}
               fill
               sizes="(max-width: 767px) 100px, 220px"
             />
           </div>
-          <figcaption>Painted cover study</figcaption>
+          <figcaption>
+            {project.artwork ? "Painted cover study" : "Project preview"}
+          </figcaption>
         </figure>
       ) : null}
       <h1 className="section-heading">{project.title}</h1>
@@ -36,7 +39,7 @@ export function ProjectDetail({ slug }: { slug: string }) {
           </Badge>
         ))}
       </div>
-      {project.image ? (
+      {project.artwork && project.image ? (
         <ContentImage
           src={project.image.src}
           alt={project.image.alt}

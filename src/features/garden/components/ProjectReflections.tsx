@@ -42,29 +42,32 @@ export function ProjectReflections({
         role="group"
         aria-label="Choose a project"
       >
-        {projects.map((item, index) => (
-          <button
-            key={item.slug}
-            type="button"
-            onClick={() => setSelected(index)}
-            aria-pressed={selected === index}
-            aria-label={`Discover ${item.title}`}
-            className="reflection-tab"
-          >
-            {item.artwork ? (
-              <ContentImage
-                src={item.artwork.src}
-                alt=""
-                width={64}
-                height={48}
-                sizes="48px"
-              />
-            ) : (
-              <span className="reflection-petal" aria-hidden="true" />
-            )}
-            <span>{item.title}</span>
-          </button>
-        ))}
+        {projects.map((item, index) => {
+          const preview = item.artwork ?? item.image;
+          return (
+            <button
+              key={item.slug}
+              type="button"
+              onClick={() => setSelected(index)}
+              aria-pressed={selected === index}
+              aria-label={`Discover ${item.title}`}
+              className="reflection-tab"
+            >
+              {preview ? (
+                <ContentImage
+                  src={preview.src}
+                  alt=""
+                  width={64}
+                  height={48}
+                  sizes="48px"
+                />
+              ) : (
+                <span className="reflection-petal" aria-hidden="true" />
+              )}
+              <span>{item.title}</span>
+            </button>
+          );
+        })}
       </div>
       <div className="reflection-selected">
         {artwork ? (
