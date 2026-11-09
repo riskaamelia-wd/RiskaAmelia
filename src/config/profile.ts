@@ -3,7 +3,7 @@ export const PROFILE = {
   role: "Software Engineer",
   location: "East Jakarta, Indonesia",
   summary:
-    "Frontend-focused software engineer working with React, Next.js, and TypeScript.",
+    "Frontend-focused software engineer working with Next.js, and TypeScript.",
   // Long biography supplied by the portfolio owner for the About page.
   about: [
     "I am a Software Engineer specializing in frontend development with expertise in React.js, Next.js, and TypeScript. As a Valedictorian graduate in Information Systems, I bring strong analytical skills and a detail-oriented approach to designing modern interfaces, improving user workflows, and transforming legacy systems into efficient, user-friendly web applications.",
