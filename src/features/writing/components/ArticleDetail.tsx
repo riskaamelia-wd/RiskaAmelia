@@ -5,12 +5,14 @@ import { getArticle } from "../content";
 import { ContentImage } from "@/components/common/ContentImage";
 import { ArticleLanguages } from "./ArticleLanguages";
 import { ArticleBody } from "./ArticleBody";
-import bullmq from "../articles/bullmq.json";
+import { getArticleTranslations } from "../translations";
+import { QueueDiagram } from "./QueueDiagram";
 import "@/styles/articles.css";
 export function ArticleDetail({ slug }: { slug: string }) {
   const article = getArticle(slug);
   if (!article) notFound();
-  if (article.slug === "bullmq-job-queues-nodejs") {
+  const translations = getArticleTranslations(slug);
+  if (translations) {
     return (
       <article className="page-shell article-reader py-16">
         <Link href="/writing" className="text-link mb-10">
@@ -27,10 +29,18 @@ export function ArticleDetail({ slug }: { slug: string }) {
         ) : null}
         <ArticleLanguages
           indonesian={
-            <ArticleBody {...bullmq.id} language="id" date={article.date} />
+            <ArticleBody {...translations.id} language="id" date={article.date}>
+              {article.diagram === "queue" ? (
+                <QueueDiagram language="id" />
+              ) : null}
+            </ArticleBody>
           }
           english={
-            <ArticleBody {...bullmq.en} language="en" date={article.date} />
+            <ArticleBody {...translations.en} language="en" date={article.date}>
+              {article.diagram === "queue" ? (
+                <QueueDiagram language="en" />
+              ) : null}
+            </ArticleBody>
           }
         />
       </article>

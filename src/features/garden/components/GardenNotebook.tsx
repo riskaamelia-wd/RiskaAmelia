@@ -10,9 +10,9 @@ export function GardenNotebook() {
       <p>
         {latest ? (
           <>
-            Background jobs,
+            Work, life,
             <br />
-            <em>a little clearer.</em>
+            <em>and a little clarity.</em>
           </>
         ) : (
           <>
@@ -25,7 +25,7 @@ export function GardenNotebook() {
         )}
       </p>
       <Link href={latest ? `/writing/${latest.slug}` : "/writing"}>
-        {latest ? "Read about BullMQ · ID / EN" : "No published notes yet"}{" "}
+        {latest ? "Read the latest note · EN / ID" : "No published notes yet"}{" "}
         <ArrowUpRight size={14} aria-hidden="true" />
       </Link>
     </aside>

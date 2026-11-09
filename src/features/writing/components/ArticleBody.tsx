@@ -1,16 +1,18 @@
 import Markdown from "react-markdown";
-import { QueueDiagram } from "./QueueDiagram";
+import type { ReactNode } from "react";
 import type { ArticleLanguage } from "../types/article";
 export function ArticleBody({
   title,
   markdown,
   language,
   date,
+  children,
 }: {
   title: string;
   markdown: string;
   language: ArticleLanguage;
   date: string;
+  children?: ReactNode;
 }) {
   return (
     <>
@@ -26,7 +28,7 @@ export function ArticleBody({
           }).format(new Date(`${date}T00:00:00Z`))}
         </time>
       </p>
-      <QueueDiagram language={language} />
+      {children}
       <div className="article-prose">
         <Markdown
           skipHtml

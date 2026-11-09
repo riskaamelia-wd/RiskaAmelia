@@ -258,3 +258,21 @@
   outline: 2px solid var(--garden-paper);
   outline-offset: 4px;
 }
+
+.painting-page .article-prose h3 {
+  font-family: var(--font-cormorant), Georgia, serif;
+  font-size: 28px;
+  line-height: 1.3;
+  margin: 40px 0 18px;
+  scroll-margin-top: 100px;
+}
+.article-prose hr {
+  border: 0;
+  border-top: 1px solid var(--garden-rule);
+  margin: 40px 0;
+}
+@media (max-width: 767px) {
+  .painting-page .article-prose h3 {
+    font-size: 25px;
+  }
+}

@@ -6,5 +6,6 @@ export interface Article {
   paragraphs: readonly string[];
   cover?: { src: string; alt: string; width: number; height: number };
   languages?: readonly ArticleLanguage[];
+  diagram?: "queue";
 }
 export type ArticleLanguage = "id" | "en";
