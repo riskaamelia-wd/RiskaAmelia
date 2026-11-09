@@ -34,7 +34,13 @@ const cormorant = localFont({
   variable: "--font-cormorant",
   display: "swap",
 });
+const deploymentHost =
+  process.env.VERCEL_PROJECT_PRODUCTION_URL || process.env.VERCEL_URL;
 export const metadata: Metadata = {
+  metadataBase: new URL(
+    process.env.SITE_URL ||
+      (deploymentHost ? `https://${deploymentHost}` : "http://localhost:3000"),
+  ),
   title: {
     default: `${SITE.name} — Software engineer`,
     template: `%s | ${SITE.name}`,

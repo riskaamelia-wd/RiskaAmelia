@@ -64,7 +64,7 @@ export function JourneyContent({
         <>
           <p className="journey-copy">
             What I’m learning, what I’m wondering, and ideas worth keeping. The
-            notebook is open; the first pages are still to come.
+            notebook is open, with notes on building things for the web.
           </p>
           <Link className="journey-action" href="/writing">
             Open the notebook <ArrowUpRight size={16} aria-hidden="true" />
